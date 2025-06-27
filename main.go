@@ -110,7 +110,7 @@ func main() {
 			isCommandKeySelect = false
 			// xPos=0
 		}
-		if rl.IsKeyPressed(rl.KeyW) {
+		if rl.IsKeyPressed(rl.KeyW) || rl.IsKeyPressed(rl.KeyPageUp) {
 			if isCommandKeySelect == false {
 				if(yStartPos<=0){
 					if xStartPos > 0 {
@@ -131,7 +131,7 @@ func main() {
 				yPos = 0
 			}
 		}
-		if rl.IsKeyPressed(rl.KeyS) {
+		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
 			if isCommandKeySelect == false {
 				if yStartPos == 0 {
 					if((xPagePos+3)+1<len(listKey[0])){
