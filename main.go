@@ -161,11 +161,18 @@ func main() {
 				switch(yPos){
 				// COPY, PASTE, SHIFT, CTRL, SPACE	
 				case 0:
-					inputText += "CTRL"
+					inputText += "COPY"
+				case 1:
+					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
+					cmd2.Stdout = io.Discard
+    				cmd2.Stderr = io.Discard
+					cmd2.Start();
+					rl.CloseWindow()
+					return;
 				case 2:
 					isShiftDown = !isShiftDown
 				case 3:
-					inputText += "CTRL"
+					inputText = "CTRL"
 				case 4:
 					inputText += " "
 				case 5:
