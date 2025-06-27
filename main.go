@@ -168,7 +168,7 @@ func main() {
 				case 4:
 					inputText += " "
 				case 5:
-					cmd := exec.Command("bash", "-c", `echo "test" | xclip -selection clipboard`)
+					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
 					if err := cmd.Run(); err != nil {
 						log.Fatalf("Failed to run command: %v", err)
 					}
