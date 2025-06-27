@@ -172,10 +172,10 @@ func main() {
 					cmd2.Stdout = io.Discard
 					cmd2.Stderr = io.Discard
 					_ = cmd2.Run()
-					cmd := exec.Command("nohup", "./command.sh", ">/dev/null", "2>&1")
-					cmd.Stdout = io.Discard
-					cmd.Stderr = io.Discard
-					_ = cmd.Run()
+					// cmd := exec.Command("nohup", "./command.sh", ">/dev/null", "2>&1")
+					// cmd.Stdout = io.Discard
+					// cmd.Stderr = io.Discard
+					// _ = cmd.Run()
 					rl.CloseWindow()
 					return;
 				default:
