@@ -168,14 +168,16 @@ func main() {
 				case 4:
 					inputText += " "
 				case 5:
-					cmd2 := exec.Command("echo", "\""+inputText+"\"", "|", "xclip", "-selection", "clipboard")
-					_ = cmd2.Run()
-					// cmd := exec.Command("nohup", "./command.sh", ">/dev/null", "2>&1")
-					// cmd.Stdout = io.Discard
-					// cmd.Stderr = io.Discard
-					// _ = cmd.Run()
-					// rl.CloseWindow()
-					// return;
+					cmd := exec.Command("bash", "-c", `echo "test" | xclip -selection clipboard`)
+					if err := cmd.Run(); err != nil {
+						log.Fatalf("Failed to run command: %v", err)
+					}
+					cmd := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
+					if err := cmd.Run(); err != nil {
+						log.Fatalf("Failed to run command: %v", err)
+					}
+					rl.CloseWindow()
+					return;
 				default:
 					inputText += "check"
 				}
