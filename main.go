@@ -4,7 +4,7 @@ import rl "github.com/gen2brain/raylib-go/raylib"
 import (
 	// "fmt"
 	"os/exec"
-	"io"
+	// "io"
 )
 
 // KeyHandler is the signature we’ll use for one-shot callbacks.
