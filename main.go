@@ -4,7 +4,7 @@ import rl "github.com/gen2brain/raylib-go/raylib"
 import (
 	// "fmt"
 	"os/exec"
-	"log"
+	// "log"
 	"io"
 )
 
