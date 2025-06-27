@@ -8,7 +8,6 @@ while true; do
     echo "$checkprocess"
     if [ "$checkprocess" -eq 1 ]; then
         getcopystr=$(xclip -selection clipboard -o)
-        sleep 2
         xdotool type "$getcopystr"
         echo "hello"
         break
