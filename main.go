@@ -4,7 +4,7 @@ import rl "github.com/gen2brain/raylib-go/raylib"
 import (
 	// "fmt"
 	"os/exec"
-	// "io"
+	"log"
 )
 
 // KeyHandler is the signature we’ll use for one-shot callbacks.
@@ -172,9 +172,9 @@ func main() {
 					if err := cmd.Run(); err != nil {
 						log.Fatalf("Failed to run command: %v", err)
 					}
-					cmd := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
-					if err := cmd.Run(); err != nil {
-						log.Fatalf("Failed to run command: %v", err)
+					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
+					if err2 := cmd2.Run(); err2 != nil {
+						log.Fatalf("Failed to run command: %v", err2)
 					}
 					rl.CloseWindow()
 					return;
