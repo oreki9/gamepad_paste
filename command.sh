@@ -7,7 +7,8 @@ while true; do
     checkprocess=$(echo "$matches" | wc -l)
     echo "$checkprocess"
     if [ "$checkprocess" -eq 1 ]; then
-        xdotool key --clearmodifiers ctrl+v
+        getcopystr=$(xclip -selection clipboard -o)
+        xdotool type "$getcopystr"
         echo "hello"
         break
     fi
