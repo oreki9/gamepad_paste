@@ -5,6 +5,7 @@ start_time=$(date +%s)
 while true; do
     matches=$(ps aux | grep -i main.go | grep -v grep)
     checkprocess=$(echo "$matches" | wc -l)
+    touch "$checkprocess" -eq 1
     if [ "$checkprocess" -eq 1 ]; then
         xdotool key --clearmodifiers ctrl+v
         # echo "hello"
