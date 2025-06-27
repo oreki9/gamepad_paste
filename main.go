@@ -169,8 +169,6 @@ func main() {
 					inputText += " "
 				case 5:
 					cmd2 := exec.Command("echo", "\""+inputText+"\"", "|", "xclip", "-selection", "clipboard")
-					cmd2.Stdout = io.Discard
-					cmd2.Stderr = io.Discard
 					_ = cmd2.Run()
 					// cmd := exec.Command("nohup", "./command.sh", ">/dev/null", "2>&1")
 					// cmd.Stdout = io.Discard
