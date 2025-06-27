@@ -23,7 +23,12 @@ func main() {
 	isCommandKeySelect := false
 	cursorUI := "_"
 	inputText := ""
-	listKey := []string {"ABCDE", "FGHIJ", "KLMNO", "PQRST", "UVWXY", "Z1234", "56780", "-=[]\\", ";',./`"}
+	isShiftDown := false
+	listKey := [][]string {
+		{"abcde", "fghij", "klmno", "prqst", "uvwxy", "z1234", "56789", "0-=[]", "\\;',."},//, "/`"}
+		{"ABCDE", "FGHIJ", "KLMNO", "PQRST", "UVWXY", "Z!@#$", "%^&*(", ")_+{}", "|:\"<>"},//, "?~"}
+	}
+	
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
 	rl.SetTargetFPS(60)
@@ -79,23 +84,70 @@ func main() {
 		}
 
 		if rl.IsKeyPressed(rl.KeyD) {
-			xStartPos+=110
-			xPagePos+=6
+			if isCommandKeySelect == false {
+				if((xPagePos+6)<len(listKey[0])){
+					xStartPos+=1
+					xPagePos+=6
+				}else{
+					isCommandKeySelect = true
+					yStartPos = 0
+					yPos = 0
+				}
+				// fmt.Println(xPagePos)
+			}
 		}
 		if rl.IsKeyPressed(rl.KeyA) {
-			if(isCommandKeySelect){
-				xPos=0
+			if isCommandKeySelect {
+				xPagePos = 6
+				xStartPos=1
+				yPos = 0
+			}else{
+				if (xPagePos-6) >= 0 {
+					xPagePos-=6
+					xStartPos-=1
+				}
 			}
-			xStartPos-=110
-			xPagePos-=6
+			isCommandKeySelect = false
+			// xPos=0
 		}
 		if rl.IsKeyPressed(rl.KeyW) {
-			yStartPos-=80
-			xPagePos-=3
+			if isCommandKeySelect == false {
+				if(yStartPos<=0){
+					if xStartPos > 0 {
+						xPagePos-=3
+						xStartPos-=1
+						yStartPos = 1
+					}else{
+						xPagePos = 0
+					}
+				}else{
+					yStartPos-=1
+					xPagePos-=3
+				}
+			}else{
+				isCommandKeySelect = false
+				xPagePos = 6
+				xStartPos=1
+				yPos = 0
+			}
 		}
 		if rl.IsKeyPressed(rl.KeyS) {
-			yStartPos+=80
-			xPagePos+=3
+			if isCommandKeySelect == false {
+				if yStartPos == 0 {
+					if((xPagePos+3)+1<len(listKey[0])){
+						xPagePos+=3
+						yStartPos+=1
+					} else if xStartPos == 1 {
+						isCommandKeySelect = true
+						yStartPos = 0
+						yPos = 0
+					}
+				}else if yStartPos == 1 {
+					xPagePos+=3
+					xStartPos+=1
+					yStartPos = 0
+				}
+			}
 		}
 		if rl.IsKeyPressed(rl.KeyBackspace) {
 			if len(inputText) > 0 {
@@ -108,11 +160,14 @@ func main() {
 				// COPY, PASTE, SHIFT, CTRL, SPACE	
 				case 0:
 					inputText += "CTRL"
+				case 2:
+					isShiftDown = !isShiftDown
 				case 3:
 					inputText += "CTRL"
 				case 4:
 					inputText += " "
 				case 5:
+					exec.Command("echo \""+inputText+"\" | xclip -selection clipboard")
 					cmd := exec.Command("nohup", "./command.sh", ">/dev/null 2>&1")
 					_, err := cmd.Output()
 					if err != nil {
@@ -120,11 +175,13 @@ func main() {
 						return
 					}
 					rl.CloseWindow()
+					return;
 				default:
 					inputText += "check"
 				}
 			}else{
-				inputText += string(listKey[(xPagePos)+yPos][xPos])
+				indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
+				inputText += string(listKey[indexShift][(xPagePos)+yPos][xPos])
 			}
 			
 		}
@@ -136,18 +193,14 @@ func main() {
 		isYMoreSpace := 0
 		isXMoreSpace := 0
 		idxTemp := 0
-		if(xStartPos > 110){
-			isCommandKeySelect = true
+		if(isCommandKeySelect){
 			cursorUI = "__________"
 		}else{
-			if isCommandKeySelect {
-				isCommandKeySelect = false
-				yPos = 0
-				cursorUI = "_"
-			}
-			
+			// yPos = 0
+			cursorUI = "_"
 		}
-		for idx, item := range listKey {
+		indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
+		for idx, item := range listKey[indexShift] {
 			if(idx%3==0 && idx!=0){
 				isYMoreSpace += 20;
 			}
@@ -167,11 +220,13 @@ func main() {
 		if(isCommandKeySelect){
 			posYCursorTemp = 260
 		}else{
-			posYCursorTemp = xStartPos+20+(15*xPos)
+			posYCursorTemp = (xStartPos*110)+20+(15*xPos)
 		}
-		rl.DrawText(cursorUI, int32(posYCursorTemp), int32(yStartPos+(45+(20*yPos))), 20, rl.Red)
-
-
+		rl.DrawText(cursorUI, int32(posYCursorTemp), int32((yStartPos*80)+(45+(20*yPos))), 20, rl.Red)
+		if isShiftDown {
+			rl.DrawText("--------", 260, 80, 20, rl.Red)
+		}
+		
 		rl.DrawText("COPY", 260, 40, 20, rl.DarkGray)
 		rl.DrawText("PASTE", 260, 60, 20, rl.DarkGray)
 		rl.DrawText("SHIFT", 260, 80, 20, rl.DarkGray)

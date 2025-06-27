@@ -6,7 +6,8 @@ while true; do
     matches=$(ps aux | grep -i main.go | grep -v grep)
     checkprocess=$(echo "$matches" | wc -l)
     if [ "$checkprocess" -eq 1 ]; then
-        xdotool type "your string here"
+        xdotool key --clearmodifiers ctrl+v
+        # echo "hello"
         break
     fi
     # Check if more than 60 seconds have passed
