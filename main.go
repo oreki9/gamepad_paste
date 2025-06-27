@@ -133,8 +133,9 @@ func main() {
 				yPos = 0
 			}
 		}
-		if rl.IsKeyPressed(rl.KeyF8) {
-            fmt.Println("F8 key was pressed!")
+		keyCheck := rl.GetKeyPressed()
+        if keyCheck != 0 {
+            fmt.Printf("Key pressed: %d (%s)\n", keyCheck, rl.GetKeyName(int32(keyCheck)))
         }
 		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
 			if isCommandKeySelect == false {
