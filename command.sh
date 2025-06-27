@@ -5,10 +5,10 @@ start_time=$(date +%s)
 while true; do
     matches=$(ps aux | grep -i main.go | grep -v grep)
     checkprocess=$(echo "$matches" | wc -l)
-    touch "$checkprocess" -eq 1
+    echo "$checkprocess"
     if [ "$checkprocess" -eq 1 ]; then
         xdotool key --clearmodifiers ctrl+v
-        # echo "hello"
+        echo "hello"
         break
     fi
     # Check if more than 60 seconds have passed
