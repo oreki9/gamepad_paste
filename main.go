@@ -2,8 +2,9 @@ package main
 
 import rl "github.com/gen2brain/raylib-go/raylib"
 import (
-	"fmt"
+	// "fmt"
 	"os/exec"
+	"io"
 )
 
 // KeyHandler is the signature we’ll use for one-shot callbacks.
@@ -167,13 +168,14 @@ func main() {
 				case 4:
 					inputText += " "
 				case 5:
-					exec.Command("echo \""+inputText+"\" | xclip -selection clipboard")
-					cmd := exec.Command("nohup", "./command.sh", ">/dev/null 2>&1")
-					_, err := cmd.Output()
-					if err != nil {
-						fmt.Println("Error:", err)
-						return
-					}
+					cmd2 := exec.Command("echo", "\""+inputText+"\"", "|", "xclip", "-selection", "clipboard")
+					cmd2.Stdout = io.Discard
+					cmd2.Stderr = io.Discard
+					_ = cmd2.Run()
+					cmd := exec.Command("nohup", "./command.sh", ">/dev/null", "2>&1")
+					cmd.Stdout = io.Discard
+					cmd.Stderr = io.Discard
+					_ = cmd.Run()
 					rl.CloseWindow()
 					return;
 				default:
