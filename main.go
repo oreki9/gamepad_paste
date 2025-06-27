@@ -172,15 +172,11 @@ func main() {
 					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
 					cmd.Stdout = io.Discard
     				cmd.Stderr = io.Discard
-					if err := cmd.Run(); err != nil {
-						log.Fatalf("Failed to run command: %v", err)
-					}
+					cmd.Start();
 					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
-					if err2 := cmd2.Run(); err2 != nil {
-						log.Fatalf("Failed to run command: %v", err2)
-					}
+					cmd2.Start();
 					rl.CloseWindow()
 					return;
 				default:
