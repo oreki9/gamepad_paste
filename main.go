@@ -174,8 +174,8 @@ func main() {
 					// cmd.Stdout = io.Discard
 					// cmd.Stderr = io.Discard
 					// _ = cmd.Run()
-					rl.CloseWindow()
-					return;
+					// rl.CloseWindow()
+					// return;
 				default:
 					inputText += "check"
 				}
