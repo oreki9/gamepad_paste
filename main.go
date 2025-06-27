@@ -2,7 +2,7 @@ package main
 
 import rl "github.com/gen2brain/raylib-go/raylib"
 import (
-	// "fmt"
+	"fmt"
 	"os/exec"
 	// "log"
 	"io"
@@ -133,6 +133,9 @@ func main() {
 				yPos = 0
 			}
 		}
+		if rl.IsKeyPressed(rl.KeyF8) {
+            fmt.Println("F8 key was pressed!")
+        }
 		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
 			if isCommandKeySelect == false {
 				if yStartPos == 0 {
