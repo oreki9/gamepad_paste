@@ -135,7 +135,7 @@ func main() {
 		}
 		keyCheck := rl.GetKeyPressed()
         if keyCheck != 0 {
-            fmt.Printf("Key pressed: %d (%s)\n", keyCheck, rl.GetKeyName(int32(keyCheck)))
+            fmt.Printf("Key pressed: %d (%s)\n", keyCheck)
         }
 		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
 			if isCommandKeySelect == false {
