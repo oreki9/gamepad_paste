@@ -2,7 +2,7 @@
 gamepadWindow="gamepadkey"
 mainproc=$(ps aux | grep -i backgamepadkeyproc.sh | grep -v grep)
 checkmainprco=$(echo "$mainproc" | wc -l)
-if [ "$checkmainprco" -gt 2 ]; then
+if [ "$checkmainprco" -eq 2 ]; then
     if [ -e /dev/input/event6 ]; then
         sudo evtest /dev/input/event6 | grep --line-buffered 'code 315.*value 1' | while read line; do
             echo "KEY 315 PRESSED!"
