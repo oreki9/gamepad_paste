@@ -25,6 +25,7 @@ mainrun(){
             countoldproc=$(echo "$themostold" | wc -l)
             if [ "$countoldproc" -eq 1 ]; then
                 kill "$themostold"
+                mainrun
             fi
         fi
     fi
