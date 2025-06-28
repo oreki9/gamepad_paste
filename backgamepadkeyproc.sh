@@ -1,5 +1,5 @@
 #!/bin/bash
-gamepadWindow="gamepadkey"
+gamepadWindow="maingamepadkey"
 mainproc=$(ps aux | grep -i backgamepadkeyproc.sh | grep -v grep)
 checkmainprco=$(echo "$mainproc" | wc -l)
 if [ "$checkmainprco" -eq 2 ]; then
