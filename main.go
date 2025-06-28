@@ -2,8 +2,10 @@ package main
 
 import rl "github.com/gen2brain/raylib-go/raylib"
 import (
-	"fmt"
+	// "fmt"
+	"sync"
 	"os/exec"
+	"bufio"
 	// "log"
 	"io"
 )
@@ -30,24 +32,55 @@ func main() {
 		{"abcde", "fghij", "klmno", "prqst", "uvwxy", "z1234", "56789", "0-=[]", "\\;',."},//, "/`"}
 		{"ABCDE", "FGHIJ", "KLMNO", "PQRST", "UVWXY", "Z!@#$", "%^&*(", ")_+{}", "|:\"<>"},//, "?~"}
 	}
-	
+	// rl.SetTraceLogLevel(rl.LogNone)  // disables all raylib log output
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
 	rl.SetTargetFPS(60)
 
 	// player := rl.NewVector2(float32(screenW/2), float32(screenH/2))
 
-	// //-----------------------------------------------------------------
-	// // 2 – Make a tiny “dispatcher”: map desired keys to callback logic.
-	// //-----------------------------------------------------------------
 	handlers := map[int32]KeyHandler{
 	}
+	
+	// listening to command
+	cmd := exec.Command("bash", "-c", "./keypress.sh")
+    stdout, err := cmd.StdoutPipe()
+    if err != nil {
+        panic(err)
+    }
 
-	//-----------------------------------------------------------------
-	// 3 – Main loop.
-	//-----------------------------------------------------------------
+    if err := cmd.Start(); err != nil {
+        panic(err)
+    }
+
+    // Channel to collect lines
+    outputLines := ""
+	var mu sync.Mutex
+
+    // Read stdout in background goroutine
+    go func() {
+        scanner := bufio.NewScanner(stdout)
+        for scanner.Scan() {
+            mu.Lock()
+            outputLines = scanner.Text()
+            mu.Unlock()
+        }
+    }()
+	// end command
+	
 	for !rl.WindowShouldClose() {
-
+		mu.Lock()
+		if len(outputLines) > 0 {
+			if rl.IsWindowHidden() {
+				rl.RestoreWindow()
+			}else{
+				rl.MinimizeWindow()
+			}
+			return
+		}
+		outputLines = ""
+		mu.Unlock()
+		
 		// ── A. EDGE-triggered keys (fires once on the frame the key goes down)
 		for key, cb := range handlers {
 			if rl.IsKeyPressed(key) { // IsKeyPressed … detect a single press :contentReference[oaicite:1]{index=1}
@@ -133,10 +166,6 @@ func main() {
 				yPos = 0
 			}
 		}
-		keyCheck := rl.GetKeyPressed()
-        if keyCheck != 0 {
-            fmt.Printf("Key pressed: %d (%s)\n", keyCheck)
-        }
 		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
 			if isCommandKeySelect == false {
 				if yStartPos == 0 {
