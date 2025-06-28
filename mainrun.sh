@@ -4,9 +4,9 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 else
     if [ -e gamepadkey ]; then
-        sudo kdocker gamepadkey
+        sudo kdocker ./gamepadkey
     else
         go build -o gamepadkey
-        sudo kdocker gamepadkey
+        sudo kdocker ./gamepadkey
     fi
 fi
