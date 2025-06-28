@@ -196,7 +196,7 @@ func main() {
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
-					rl.CloseWindow()
+					rl.MinimizeWindow()
 					return;
 				case 2:
 					isShiftDown = !isShiftDown
@@ -213,7 +213,7 @@ func main() {
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
-					rl.CloseWindow()
+					rl.MinimizeWindow()
 					return;
 				default:
 					inputText += "check"
