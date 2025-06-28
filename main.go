@@ -66,7 +66,7 @@ func main() {
 			fmt.Println("output text")
 			fmt.Println(outputLines)
 			fmt.Println(rl.IsWindowHidden())
-			if rl.IsWindowHidden() {
+			if rl.IsWindowMinimized() {
 				rl.RestoreWindow()
 			}else{
 				rl.MinimizeWindow()
