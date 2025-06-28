@@ -11,4 +11,6 @@ if [ -e /dev/input/event6 ]; then
         # put your command here, e.g.:
         # notify-send "Key 315 pressed"
     done
+else
+    echo "device is not found"
 fi
