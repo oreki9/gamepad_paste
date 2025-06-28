@@ -2,7 +2,7 @@ package main
 
 import rl "github.com/gen2brain/raylib-go/raylib"
 import (
-	// "fmt"
+	"fmt"
 	"sync"
 	"os/exec"
 	"bufio"
@@ -63,6 +63,8 @@ func main() {
         for scanner.Scan() {
             mu.Lock()
             outputLines = scanner.Text()
+			fmt.Println("output text")
+			fmt.Println(outputLines)
             mu.Unlock()
         }
     }()
@@ -71,6 +73,8 @@ func main() {
 	for !rl.WindowShouldClose() {
 		mu.Lock()
 		if len(outputLines) > 0 {
+			fmt.Println(rl.IsWindowHidden())
+			fmt.Println(outputLines)
 			if rl.IsWindowHidden() {
 				rl.RestoreWindow()
 			}else{
