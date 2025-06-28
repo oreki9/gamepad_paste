@@ -1,5 +1,5 @@
 #!/bin/bash
-gamepadWindow="main"
+gamepadWindow="gamepadkey"
 if [ -e /dev/input/event6 ]; then
     sudo evtest /dev/input/event6 | grep --line-buffered 'code 315.*value 1' | while read line; do
         echo "KEY 315 PRESSED!"
