@@ -9,7 +9,7 @@ if [ "$checkmainprco" -eq 2 ]; then
             matches=$(ps aux | grep -i "$gamepadWindow" | grep -v grep)
             checkprocess=$(echo "$matches" | wc -l)
             if [ "$checkprocess" -eq 1 ]; then #process not found
-                kdocker "$gamepadWindow"
+                kdocker "./$gamepadWindow"
             fi
             # put your command here, e.g.:
             # notify-send "Key 315 pressed"
