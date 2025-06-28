@@ -43,7 +43,7 @@ func main() {
 	}
 	
 	// listening to command
-	cmd := exec.Command("bash", "-c", "./keypress.sh")
+	cmd := exec.Command("bash", "-c", "./backgamepadkeyproc.sh")
     stdout, err := cmd.StdoutPipe()
     if err != nil {
         panic(err)
