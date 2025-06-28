@@ -65,25 +65,17 @@ func main() {
             outputLines = scanner.Text()
 			fmt.Println("output text")
 			fmt.Println(outputLines)
+			if rl.IsWindowHidden() {
+				rl.RestoreWindow()
+			}else{
+				rl.MinimizeWindow()
+			}
             mu.Unlock()
         }
     }()
 	// end command
 	
 	for !rl.WindowShouldClose() {
-		mu.Lock()
-		if len(outputLines) > 0 {
-			fmt.Println(rl.IsWindowHidden())
-			fmt.Println(outputLines)
-			if rl.IsWindowHidden() {
-				rl.RestoreWindow()
-			}else{
-				rl.MinimizeWindow()
-			}
-		}
-		outputLines = ""
-		mu.Unlock()
-		
 		// ── A. EDGE-triggered keys (fires once on the frame the key goes down)
 		for key, cb := range handlers {
 			if rl.IsKeyPressed(key) { // IsKeyPressed … detect a single press :contentReference[oaicite:1]{index=1}
