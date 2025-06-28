@@ -80,7 +80,6 @@ func main() {
 			}else{
 				rl.MinimizeWindow()
 			}
-			return
 		}
 		outputLines = ""
 		mu.Unlock()
