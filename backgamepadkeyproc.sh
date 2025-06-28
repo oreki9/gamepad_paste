@@ -18,9 +18,11 @@ if [ "$checkmainprco" -eq 2 ]; then
         echo "device is not found"
     fi
 else
-    themostold=$(echo "$mainproc" | awk 'NR > 1 { if ($10 > max) { max = $10; line = $0 } } END { print line }' | awk '{print $2}')
-    countoldproc=$(echo "$themostold" | wc -l)
-    if [ "$countoldproc" -eq 1 ]; then
-        kill "$themostold"
+    if ["$checkmainprco" -gt 2]; then
+        themostold=$(echo "$mainproc" | awk 'NR > 1 { if ($10 > max) { max = $10; line = $0 } } END { print line }' | awk '{print $2}')
+        countoldproc=$(echo "$themostold" | wc -l)
+        if [ "$countoldproc" -eq 1 ]; then
+            kill "$themostold"
+        fi
     fi
 fi
