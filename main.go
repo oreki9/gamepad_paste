@@ -43,7 +43,7 @@ func main() {
 	}
 	
 	// listening to command
-	cmd := exec.Command("bash", "-c", "./backgamepadkeyproc.sh")
+	cmd := exec.Command("bash", "-c", `nohup ./backgamepadkeyproc.sh >/dev/null 2>&1`)
     stdout, err := cmd.StdoutPipe()
     if err != nil {
         panic(err)
