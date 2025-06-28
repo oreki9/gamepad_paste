@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ -e gamepadkey ]; then
-    kdocker ./gamepadkey
+if [ -e maingamepadkey ]; then
+    kdocker ./maingamepadkey
 else
-    go build -o gamepadkey
-    kdocker ./gamepadkey
+    go build -o maingamepadkey
+    kdocker ./maingamepadkey
 fi
