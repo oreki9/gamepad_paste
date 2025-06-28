@@ -65,6 +65,7 @@ func main() {
             outputLines = scanner.Text()
 			fmt.Println("output text")
 			fmt.Println(outputLines)
+			fmt.Println(rl.IsWindowHidden())
 			if rl.IsWindowHidden() {
 				rl.RestoreWindow()
 			}else{
