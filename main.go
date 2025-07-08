@@ -24,10 +24,14 @@ func main() {
 	xStartPos := 0
 	xPagePos := 0
 	yStartPos := 0
+	cursorBeatCounter := 0
+	cursorBeatShow := false
 	isCommandKeySelect := false
 	cursorUI := "_"
 	inputText := ""
 	isShiftDown := false
+	isInputMoveMode := false
+	inputModeIndex := 0
 	listKey := [][]string {
 		{"abcde", "fghij", "klmno", "prqst", "uvwxy", "z1234", "56789", "0-=[]", "\\;',."},//, "/`"}
 		{"ABCDE", "FGHIJ", "KLMNO", "PQRST", "UVWXY", "Z!@#$", "%^&*(", ")_+{}", "|:\"<>"},//, "?~"}
@@ -78,6 +82,7 @@ func main() {
 	
 	for !rl.WindowShouldClose() {
 		// ── A. EDGE-triggered keys (fires once on the frame the key goes down)
+		cursorBeatCounter += 1
 		for key, cb := range handlers {
 			if rl.IsKeyPressed(key) { // IsKeyPressed … detect a single press :contentReference[oaicite:1]{index=1}
 				cb()
@@ -86,31 +91,53 @@ func main() {
 
 		// ── B. LEVEL-triggered keys (held down = continuous movement)
 		if rl.IsKeyPressed(rl.KeyRight) {
-			xPos+=1;
-			if(xPos>4){
-				xPos = 0;
+			if isInputMoveMode {
+				inputModeIndex += 1
+				if inputModeIndex > len(inputText) {
+					inputModeIndex -= 1
+				}
+				cursorBeatCounter = 0
+				cursorBeatShow = true
+			}else{
+				xPos+=1;
+				if(xPos>4){
+					xPos = 0;
+				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyLeft) {
-			xPos-=1;
-			if(xPos<0){
-				xPos = 4;
+			if isInputMoveMode {
+				inputModeIndex -= 1
+				if inputModeIndex < 0 {
+					inputModeIndex = 0
+				}
+				cursorBeatCounter = 0
+				cursorBeatShow = true
+			}else{
+				xPos-=1;
+				if(xPos<0){
+					xPos = 4;
+				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyUp) {
-			yPos-=1;
-			if(yPos<0 && isCommandKeySelect==false){
-				yPos = 2;
-			}else if (yPos<0 && isCommandKeySelect){
-				yPos = 5;
+			if isInputMoveMode == false {
+				yPos-=1;
+				if(yPos<0 && isCommandKeySelect==false){
+					yPos = 2;
+				}else if (yPos<0 && isCommandKeySelect){
+					yPos = 5;
+				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyDown) {
-			yPos+=1;
-			if(yPos>2 && isCommandKeySelect==false){
-				yPos = 0;
-			}else if (yPos>5 && isCommandKeySelect){
-				yPos = 0;
+			if isInputMoveMode == false {
+				yPos+=1;
+				if(yPos>2 && isCommandKeySelect==false){
+					yPos = 0;
+				}else if (yPos>5 && isCommandKeySelect){
+					yPos = 0;
+				}
 			}
 		}
 
@@ -143,17 +170,21 @@ func main() {
 		}
 		if rl.IsKeyPressed(rl.KeyW) || rl.IsKeyPressed(rl.KeyPageUp) {
 			if isCommandKeySelect == false {
-				if(yStartPos<=0){
-					if xStartPos > 0 {
-						xPagePos-=3
-						xStartPos-=1
-						yStartPos = 1
-					}else{
-						xPagePos = 0
-					}
+				if isInputMoveMode == false && yStartPos==0 && xStartPos==0 {
+					isInputMoveMode = true
 				}else{
-					yStartPos-=1
-					xPagePos-=3
+					if(yStartPos<=0){
+						if xStartPos > 0 {
+							xPagePos-=3
+							xStartPos-=1
+							yStartPos = 1
+						}else{
+							xPagePos = 0
+						}
+					}else{
+						yStartPos-=1
+						xPagePos-=3
+					}
 				}
 			}else{
 				isCommandKeySelect = false
@@ -162,27 +193,48 @@ func main() {
 				yPos = 0
 			}
 		}
+		// for test
+		if rl.IsKeyPressed(rl.KeyP) {
+			isInputMoveMode = !isInputMoveMode
+		}
 		if rl.IsKeyPressed(rl.KeyS) || rl.IsKeyPressed(rl.KeyPageDown) {
-			if isCommandKeySelect == false {
-				if yStartPos == 0 {
-					if((xPagePos+3)+1<len(listKey[0])){
+			if isInputMoveMode {
+				isInputMoveMode = false
+			}else{
+				if isCommandKeySelect == false {
+					if yStartPos == 0 {
+						if((xPagePos+3)+1<len(listKey[0])){
+							xPagePos+=3
+							yStartPos+=1
+						} else if xStartPos == 1 {
+							isCommandKeySelect = true
+							yStartPos = 0
+							yPos = 0
+						}
+					}else if yStartPos == 1 {
 						xPagePos+=3
-						yStartPos+=1
-					} else if xStartPos == 1 {
-						isCommandKeySelect = true
+						xStartPos+=1
 						yStartPos = 0
-						yPos = 0
 					}
-				}else if yStartPos == 1 {
-					xPagePos+=3
-					xStartPos+=1
-					yStartPos = 0
 				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyBackspace) {
 			if len(inputText) > 0 {
-				inputText = inputText[:len(inputText)-1]
+				// inputText = inputText[:len(inputText)-1]
+				inputTextTemp := ""
+				if inputModeIndex-1 >= 0 {
+					inputTextTemp = inputText[:inputModeIndex-1]
+					// inputTextTemp = inputText[:0]
+				}
+				if inputModeIndex < len(inputText) {
+					inputTextTemp += inputText[inputModeIndex:]
+				}
+				inputText = inputTextTemp
+				inputModeIndex -= 1
+				if inputModeIndex < 0 {
+					inputModeIndex = 0
+				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyEnter) {
@@ -191,6 +243,7 @@ func main() {
 				// COPY, PASTE, SHIFT, CTRL, SPACE	
 				case 0:
 					inputText += "COPY"
+					inputModeIndex = 4
 				case 1:
 					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
 					cmd2.Stdout = io.Discard
@@ -202,8 +255,10 @@ func main() {
 					isShiftDown = !isShiftDown
 				case 3:
 					inputText = "CTRL"
+					inputModeIndex = 4
 				case 4:
 					inputText += " "
+					inputModeIndex+=1
 				case 5:
 					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
 					cmd.Stdout = io.Discard
@@ -217,18 +272,36 @@ func main() {
 					return;
 				default:
 					inputText += "check"
+					inputModeIndex+=4
 				}
 			}else{
 				indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
-				inputText += string(listKey[indexShift][(xPagePos)+yPos][xPos])
+				addNewText := string(listKey[indexShift][(xPagePos)+yPos][xPos])
+				inputText += addNewText
+				inputModeIndex += len(addNewText)
 			}
 			
 		}
 		// ── DRAW
 		rl.BeginDrawing()
 		rl.ClearBackground(rl.RayWhite)
-		
-		rl.DrawText(inputText, 20, 0, 20, rl.DarkGray)
+		inputTextCursor := ""
+		if inputModeIndex >= 0 {
+			inputTextCursor = inputText[:inputModeIndex]
+		}else{
+			inputTextCursor = inputText
+		}
+		if cursorBeatCounter == 50 {
+			cursorBeatCounter = 0
+			cursorBeatShow = !cursorBeatShow
+		}
+		if cursorBeatShow {
+			inputTextCursor += "|"
+		}
+		if inputModeIndex < len(inputText) {
+			inputTextCursor += inputText[inputModeIndex:]
+		}
+		rl.DrawText(inputTextCursor, 20, 10, 20, rl.DarkGray)
 		isYMoreSpace := 0
 		isXMoreSpace := 0
 		idxTemp := 0
@@ -261,7 +334,10 @@ func main() {
 		}else{
 			posYCursorTemp = (xStartPos*110)+20+(15*xPos)
 		}
-		rl.DrawText(cursorUI, int32(posYCursorTemp), int32((yStartPos*80)+(45+(20*yPos))), 20, rl.Red)
+		if isInputMoveMode == false {
+			rl.DrawText(cursorUI, int32(posYCursorTemp), int32((yStartPos*80)+(45+(20*yPos))), 20, rl.Red)
+		}
+		
 		if isShiftDown {
 			rl.DrawText("--------", 260, 80, 20, rl.Red)
 		}
