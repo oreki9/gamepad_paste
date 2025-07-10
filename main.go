@@ -277,7 +277,8 @@ func main() {
 			}else{
 				indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
 				addNewText := string(listKey[indexShift][(xPagePos)+yPos][xPos])
-				inputText += addNewText
+				tempInputText := inputText[:inputModeIndex]+addNewText
+				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
 			}
 			
