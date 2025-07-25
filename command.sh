@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 1
+sleep 0.5
 getcopystr=$(xclip -selection clipboard -o)
 xdotool type "$getcopystr"
 # start_time=$(date +%s)

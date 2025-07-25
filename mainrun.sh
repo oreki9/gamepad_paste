@@ -1,7 +1,8 @@
 #!/bin/bash
+cd "Documents/Github/gamepad_paste"
 if [ -e maingamepadkey ]; then
-    kdocker ./maingamepadkey
+     nohup ./backgamepadkeyproc.sh
 else
     go build -o maingamepadkey
-    kdocker ./maingamepadkey
+    nohup ./backgamepadkeyproc.sh
 fi

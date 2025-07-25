@@ -47,7 +47,7 @@ func main() {
 	}
 	
 	// listening to command
-	cmd := exec.Command("bash", "-c", `nohup ./backgamepadkeyproc.sh >/dev/null 2>&1`)
+	cmd := exec.Command("bash", "-c", `nohup ./backgamepadkeyproc.sh`)
     stdout, err := cmd.StdoutPipe()
     if err != nil {
         panic(err)
@@ -69,12 +69,7 @@ func main() {
             outputLines = scanner.Text()
 			fmt.Println("output text")
 			fmt.Println(outputLines)
-			fmt.Println(rl.IsWindowMinimized())
-			if rl.IsWindowMinimized() {
-				rl.RestoreWindow()
-			}else{
-				rl.MinimizeWindow()
-			}
+			rl.CloseWindow()
             mu.Unlock()
         }
     }()
@@ -249,7 +244,7 @@ func main() {
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
-					rl.MinimizeWindow()
+					rl.CloseWindow()
 					return;
 				case 2:
 					isShiftDown = !isShiftDown
@@ -268,8 +263,9 @@ func main() {
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
-					rl.MinimizeWindow()
-					return;
+					inputText=""
+					inputModeIndex=0
+					rl.CloseWindow()
 				default:
 					inputText += "check"
 					inputModeIndex+=4
