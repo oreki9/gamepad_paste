@@ -41,6 +41,8 @@ func main() {
 	}
 	autoCompleteWord := []string{}
 	// rl.SetTraceLogLevel(rl.LogNone)  // disables all raylib log output
+	windowId := filter(getCommandOutput("xdotool getactivewindow getwindowpid"), '\n')
+	modeWindow := getProcName(windowId)
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
 	rl.SetTargetFPS(60)
@@ -62,7 +64,7 @@ func main() {
     }
 
     // Channel to collect lines
-    // outputLines := ""
+    outputLines := ""
 	var mu sync.Mutex
 
     // Read stdout in background goroutine
@@ -70,10 +72,13 @@ func main() {
         scanner := bufio.NewScanner(stdout)
         for scanner.Scan() {
             mu.Lock()
-   //          outputLines = scanner.Text()
+            outputLines = scanner.Text()
 			// fmt.Println("output text")
 			// fmt.Println(outputLines)
-			rl.CloseWindow()
+			if(len(outputLines)>0){
+				fmt.Println(outputLines)
+				// rl.CloseWindow()// for test
+			}
             mu.Unlock()
         }
     }()
@@ -311,17 +316,14 @@ func main() {
 				tempInputText := inputText[:inputModeIndex]+addNewText
 				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
-				getIdAsync := getCommandOutputAsync("xdotool getactivewindow getwindowpid")
+				autoComplete := checkAutoComplete(modeWindow, windowId, inputText)
 				go func(){
-					output := <-getIdAsync
-					func(out string) {
-						autoComplete := checkAutoComplete(filter(out, '\n'), inputText)
-						autoCompleteWord = append(autoCompleteWord, autoComplete...)
+					output := <-autoComplete
+					func(out []string) {
+						fmt.Println(out)
+						autoCompleteWord = append(autoCompleteWord, out...)
 					}(output)
 				}()
-
-
-
 			}
 			
 		}
@@ -403,47 +405,49 @@ func main() {
 	}
 }
 
-func checkAutoComplete(id string, inputword string) []string {
-	mode := getProcName(id)
-	fmt.Println(mode)
+func checkAutoComplete(mode string, id string, inputword string) <-chan[]string {
 	// incompleteWord := inputword
+	autoCompleteListAsync := make(chan []string)
 	autoCompleteList := []string{}
-	if(mode == "terminal" || strings.Contains(mode, "zsh")){
-		separatorCmd := []string{";", "&&", "||", "&",  "|"}
-		arrInput := strings.Fields(inputword)
-		lastIndexCmd := lastIndexOf(arrInput, separatorCmd)
-		commandNow := arrInput[min(lastIndexCmd+1, len(arrInput)-1)]
-		// TODO: get history terminal
-		if (commandNow == "go"){
-			autoCompleteList = append(autoCompleteList, []string{
-				"run", "build",
-			}...)
-		}
-		// check what folder is terminal, and list possible file or folder in dir
-		if (string(inputword[len(inputword)-1]) == " ") {
-			autoCompleteList = append(autoCompleteList, getListFolder(filter(getCurrDirProcId(id), '\n'))...)
-		}else{
-			// get word before /
-			lastCmd := string(arrInput[len(arrInput)-1])
-			fmt.Println("get cmd", lastCmd)
-			splitLastCmd := strings.Split(lastCmd, "/")
-			dirCheck := "/"+strings.Join(splitLastCmd[:len(splitLastCmd)-1], "/")
-			autoCompleteTarget := splitLastCmd[len(splitLastCmd)-1]
-			autoCompleteListTempp := getListFolder(filter(dirCheck, '\n'))
-			// append(autoCompleteList, ...)
-			for _, item := range autoCompleteListTempp {
-				checkCharLen := int(math.Min(float64(len(autoCompleteTarget)), float64(len(item))))
-				if string(item[:checkCharLen]) == autoCompleteTarget {
-					autoCompleteList = append(autoCompleteList, string(item[checkCharLen:]))
+	go func() {
+		fmt.Println("get mode,", mode)
+		defer close(autoCompleteListAsync)
+		if(mode == "terminal" || strings.Contains(mode, "zsh")){
+			separatorCmd := []string{";", "&&", "||", "&",  "|"}
+			arrInput := strings.Fields(inputword)
+			lastIndexCmd := lastIndexOf(arrInput, separatorCmd)
+			commandNow := arrInput[min(lastIndexCmd+1, len(arrInput)-1)]
+			// TODO: get history terminal
+			if (commandNow == "go"){
+				autoCompleteList = append(autoCompleteList, []string{
+					"run", "build",
+				}...)
+			}
+			// check what folder is terminal, and list possible file or folder in dir
+			if (string(inputword[len(inputword)-1]) == " ") {
+				autoCompleteList = append(autoCompleteList, getListFolder(filter(getCurrDirProcId(id), '\n'))...)
+			}else{
+				// get word before /
+				lastCmd := string(arrInput[len(arrInput)-1])
+				fmt.Println("get cmd", lastCmd)
+				splitLastCmd := strings.Split(lastCmd, "/")
+				dirCheck := "/"+strings.Join(splitLastCmd[:len(splitLastCmd)-1], "/")
+				autoCompleteTarget := splitLastCmd[len(splitLastCmd)-1]
+				autoCompleteListTempp := getListFolder(filter(dirCheck, '\n'))
+				// append(autoCompleteList, ...)
+				for _, item := range autoCompleteListTempp {
+					checkCharLen := int(math.Min(float64(len(autoCompleteTarget)), float64(len(item))))
+					if string(item[:checkCharLen]) == autoCompleteTarget {
+						autoCompleteList = append(autoCompleteList, string(item[checkCharLen:]))
+					}
 				}
 			}
-		}
-		autoCompleteList = append(autoCompleteList, getClipboardList()...)
-		return autoCompleteList
-	}else if(mode == "browser"){
-		return autoCompleteList
-	}
-	return autoCompleteList
+			autoCompleteList = append(autoCompleteList, getClipboardList()...)
+		}else if(mode == "browser"){ fmt.Println("sementara" )}
+		autoCompleteListAsync <- autoCompleteList
+		// fmt.Println(autoCompleteListAsync)
+	}()
+	return autoCompleteListAsync
 }
 func lastIndexOf(slice []string, target []string) int {
     for i := len(slice) - 1; i >= 0; i-- {
@@ -464,11 +468,6 @@ func contains[T comparable](slice []T, value T) bool {
 func getListFolder(curr string) []string {
 	// currDir := getCommandOutput("cd "+curr+" | ls | sed 's#/##'")
 	currDir := getCommandOutput("ls "+curr+" | sed 's#/##'")
-	fmt.Println("---------")
-	fmt.Println("ls "+curr+" | sed 's#/##'")
-	fmt.Println("---------")
-	// fmt.Println(string(currDir))
-	// fmt.Println("---end------")
 	return strings.Split(currDir, "\n")
 }
 func getCommandOutput(cmd string) string {
