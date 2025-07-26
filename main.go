@@ -42,6 +42,10 @@ func main() {
 	autoCompleteWord := []string{}
 	// rl.SetTraceLogLevel(rl.LogNone)  // disables all raylib log output
 	windowId := filter(getCommandOutput("xdotool getactivewindow getwindowpid"), '\n')
+	listChildProcId := strings.Split(getCommandOutput("pgrep -P "+windowId), "\n")
+	if(len(listChildProcId)>0){
+		windowId = filter(listChildProcId[0], '\n')
+	}
 	modeWindow := filter(getProcName(windowId), '\n')
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
