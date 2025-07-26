@@ -42,7 +42,7 @@ func main() {
 	autoCompleteWord := []string{}
 	// rl.SetTraceLogLevel(rl.LogNone)  // disables all raylib log output
 	windowId := filter(getCommandOutput("xdotool getactivewindow getwindowpid"), '\n')
-	modeWindow := getProcName(windowId)
+	modeWindow := filter(getProcName(windowId), '\n')
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
 	rl.SetTargetFPS(60)
@@ -412,7 +412,7 @@ func checkAutoComplete(mode string, id string, inputword string) <-chan[]string 
 	go func() {
 		fmt.Println("get mode,", mode)
 		defer close(autoCompleteListAsync)
-		if(mode == "terminal" || strings.Contains(mode, "zsh")){
+		if(mode == "terminal" || strings.Contains(mode, "zsh") || mode == "konsole"){
 			separatorCmd := []string{";", "&&", "||", "&",  "|"}
 			arrInput := strings.Fields(inputword)
 			lastIndexCmd := lastIndexOf(arrInput, separatorCmd)
