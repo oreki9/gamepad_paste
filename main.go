@@ -425,7 +425,7 @@ func checkAutoComplete(mode string, id string, inputword string) <-chan[]string 
 	go func() {
 		fmt.Println("get mode,", mode)
 		defer close(autoCompleteListAsync)
-		if(mode == "terminal" || strings.Contains(mode, "zsh") || mode == "konsole"){
+		if(mode == "terminal" || strings.Contains(mode, "zsh") || mode == "konsole" || mode == "bash"){
 			separatorCmd := []string{";", "&&", "||", "&",  "|"}
 			arrInput := strings.Fields(inputword)
 			lastIndexCmd := lastIndexOf(arrInput, separatorCmd)
