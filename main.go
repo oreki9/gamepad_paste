@@ -30,6 +30,7 @@ func main() {
 	cursorBeatShow := false
 	isCommandKeySelect := false
 	isTextPredictMode := false
+	textPredicIndex := 0
 	cursorUI := "_"
 	inputText := ""
 	isShiftDown := false
@@ -135,7 +136,11 @@ func main() {
 					}
 				}
 				yPos-=1;
-				if(yPos<0 && isCommandKeySelect==false){
+				if (yPos < 0 && isTextPredictMode){
+					textPredicIndex-=1
+					if(textPredicIndex<0) { textPredicIndex = 0 }
+					yPos = 0
+				}else if(yPos<0 && isCommandKeySelect==false){
 					yPos = 2;
 				}else if (yPos<0 && isCommandKeySelect){
 					yPos = 5;
@@ -150,7 +155,10 @@ func main() {
 					}
 				}
 				yPos+=1;
-				if(yPos>2 && isCommandKeySelect==false){
+				if (yPos > 5 && isTextPredictMode){
+					textPredicIndex+=1
+					yPos = 5
+				}else if(yPos>2 && isCommandKeySelect==false){
 					yPos = 0;
 				}else if (yPos>5 && isCommandKeySelect){
 					yPos = 0;
@@ -410,10 +418,13 @@ func main() {
 		rl.DrawText("CTRL", 170, 140, 20, rl.DarkGray)
 
 		// loop for 
-		for idx, item := range autoCompleteWord {
-			rl.DrawText(item, 280, int32(40+(20*idx)), 20, rl.DarkGray)
+		lastIndexPredict := min(textPredicIndex+6, len(autoCompleteWord))
+		startIndexPredict := min(textPredicIndex, lastIndexPredict)
+		idxPos := 0
+		for idx := startIndexPredict; idx < lastIndexPredict; idx++ {
+			rl.DrawText(autoCompleteWord[idx], 280, int32(40+(20*idxPos)), 20, rl.DarkGray)
+			idxPos+=1
 		}
-		
 		rl.EndDrawing()
 	}
 }
