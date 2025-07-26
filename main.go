@@ -316,6 +316,8 @@ func main() {
 				tempInputText := inputText[:inputModeIndex]+addNewText
 				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
+				getIdAsync := getCommandOutputAsync("xdotool getactivewindow getwindowpid")
+				asyncWindowId := <-getIdAsync
 				autoComplete := checkAutoComplete("29494", inputText)
 				autoCompleteWord = append(autoCompleteWord, autoComplete...)
 			}
@@ -497,4 +499,19 @@ func filter(str string, filterStr rune) string {
 }
 func getClipboardList() []string {
 	return strings.Split(getCommandOutput("gpaste-client list"), "\n")
+}
+func getCommandOutputAsync(cmd string) <-chan string {
+	result := make(chan string)
+	go func() {
+		defer close(result)
+		cmdOut := exec.Command("bash", "-c", cmd)
+		outputCmd, err := cmdOut.Output()
+		if err == nil {
+			result <- string(outputCmd)
+		} else {
+			result <- "" // or send error message if needed
+		}
+	}()
+
+	return result
 }
