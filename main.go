@@ -158,6 +158,9 @@ func main() {
 				if (isTextPredictMode){
 					if (yPos > 5) {
 						textPredicIndex+=1
+						if(textPredicIndex+5>len(autoCompleteWord)){
+							textPredicIndex-=1
+						}
 						yPos = 5
 					}
 				}else if(yPos>2 && isCommandKeySelect==false){
