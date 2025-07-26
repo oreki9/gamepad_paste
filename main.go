@@ -156,12 +156,12 @@ func main() {
 				// }
 				yPos+=1;
 				if (isTextPredictMode){
-					if (yPos > 5) {
-						textPredicIndex+=1
-						if(textPredicIndex+5>len(autoCompleteWord)){
-							textPredicIndex-=1
+					maxShow := min(5, len(autoCompleteWord))
+					if (yPos >= maxShow) {
+						if(textPredicIndex+(yPos-1)<len(autoCompleteWord)){
+							textPredicIndex+=1
 						}
-						yPos = 5
+						yPos -= 1
 					}
 				}else if(yPos>2 && isCommandKeySelect==false){
 					yPos = 0;
