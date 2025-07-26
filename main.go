@@ -6,6 +6,8 @@ import (
 	"sync"
 	"os/exec"
 	"bufio"
+	"strings"
+	"math"
 	// "log"
 	"io"
 )
@@ -27,15 +29,17 @@ func main() {
 	cursorBeatCounter := 0
 	cursorBeatShow := false
 	isCommandKeySelect := false
+	isTextPredictMode := false
 	cursorUI := "_"
 	inputText := ""
 	isShiftDown := false
 	isInputMoveMode := false
 	inputModeIndex := 0
 	listKey := [][]string {
-		{"abcde", "fghij", "klmno", "prqst", "uvwxy", "z1234", "56789", "0-=[]", "\\;',."},//, "/`"}
-		{"ABCDE", "FGHIJ", "KLMNO", "PQRST", "UVWXY", "Z!@#$", "%^&*(", ")_+{}", "|:\"<>"},//, "?~"}
+		{"abcd","efgh", "ijkl", "mnop", "rqst", "uvwx", "yz12", "3456", "7890", "-=[]", "\\;',", ".//` "},
+		{"ABCD", "EFGH", "IJKL", "MNOP", "QRST", "UVWX", "YZ!@", "#$%^", "&*()", "_+{}", "|:\"<", ">?~ "},
 	}
+	autoCompleteWord := []string{}
 	// rl.SetTraceLogLevel(rl.LogNone)  // disables all raylib log output
 	rl.InitWindow(screenW, screenH, "raylib-go keypress handler")
 	defer rl.CloseWindow()
@@ -58,7 +62,7 @@ func main() {
     }
 
     // Channel to collect lines
-    outputLines := ""
+    // outputLines := ""
 	var mu sync.Mutex
 
     // Read stdout in background goroutine
@@ -74,7 +78,6 @@ func main() {
         }
     }()
 	// end command
-	
 	for !rl.WindowShouldClose() {
 		// ── A. EDGE-triggered keys (fires once on the frame the key goes down)
 		cursorBeatCounter += 1
@@ -95,7 +98,7 @@ func main() {
 				cursorBeatShow = true
 			}else{
 				xPos+=1;
-				if(xPos>4){
+				if(xPos>3){
 					xPos = 0;
 				}
 			}
@@ -111,12 +114,17 @@ func main() {
 			}else{
 				xPos-=1;
 				if(xPos<0){
-					xPos = 4;
+					xPos = 3;
 				}
 			}
 		}
 		if rl.IsKeyPressed(rl.KeyUp) {
 			if isInputMoveMode == false {
+				if isTextPredictMode {
+					if((yPos-1) < 0){
+						return;
+					}
+				}
 				yPos-=1;
 				if(yPos<0 && isCommandKeySelect==false){
 					yPos = 2;
@@ -127,6 +135,11 @@ func main() {
 		}
 		if rl.IsKeyPressed(rl.KeyDown) {
 			if isInputMoveMode == false {
+				if isTextPredictMode {
+					if((yPos+1) >= len(autoCompleteWord)){
+						return;
+					}
+				}
 				yPos+=1;
 				if(yPos>2 && isCommandKeySelect==false){
 					yPos = 0;
@@ -165,7 +178,10 @@ func main() {
 		}
 		if rl.IsKeyPressed(rl.KeyW) || rl.IsKeyPressed(rl.KeyPageUp) {
 			if isCommandKeySelect == false {
-				if isInputMoveMode == false && yStartPos==0 && xStartPos==0 {
+				if isTextPredictMode {
+					isCommandKeySelect = true
+					isTextPredictMode = false
+				}else if isInputMoveMode == false && yStartPos==0 && xStartPos==0 {
 					isInputMoveMode = true
 				}else{
 					if(yStartPos<=0){
@@ -183,7 +199,8 @@ func main() {
 				}
 			}else{
 				isCommandKeySelect = false
-				xPagePos = 6
+				xPagePos = 9
+				yStartPos = 1
 				xStartPos=1
 				yPos = 0
 			}
@@ -198,19 +215,26 @@ func main() {
 			}else{
 				if isCommandKeySelect == false {
 					if yStartPos == 0 {
+						fmt.Println("you here", xPagePos, "and", len(listKey[0]))
 						if((xPagePos+3)+1<len(listKey[0])){
 							xPagePos+=3
 							yStartPos+=1
-						} else if xStartPos == 1 {
+						}
+					}else if yStartPos == 1 {
+						if xStartPos == 0 {
+							xPagePos+=3
+							xStartPos+=1
+							yStartPos = 0
+						}else if xStartPos == 1 {
 							isCommandKeySelect = true
 							yStartPos = 0
 							yPos = 0
 						}
-					}else if yStartPos == 1 {
-						xPagePos+=3
-						xStartPos+=1
-						yStartPos = 0
 					}
+				}else{
+					isTextPredictMode = true
+					yPos = 0
+					isCommandKeySelect = false
 				}
 			}
 		}
@@ -235,12 +259,17 @@ func main() {
 		if rl.IsKeyPressed(rl.KeyEnter) {
 			if isCommandKeySelect {
 				switch(yPos){
-				// COPY, PASTE, SHIFT, CTRL, SPACE	
+				// SPACE, END, SHIFT, COPY, PASTE, CTRL, 
 				case 0:
-					inputText += "COPY"
-					inputModeIndex = 4
+					tempInputText := inputText[:inputModeIndex]+string(" ")
+					inputText = tempInputText+inputText[inputModeIndex:]
+					inputModeIndex+=1
 				case 1:
-					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
+					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
+					cmd.Stdout = io.Discard
+    				cmd.Stderr = io.Discard
+					cmd.Start();
+					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh paste >/dev/null 2>&1`)
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
@@ -249,32 +278,41 @@ func main() {
 				case 2:
 					isShiftDown = !isShiftDown
 				case 3:
-					inputText = "CTRL"
-					inputModeIndex = 4
-				case 4:
-					inputText += " "
-					inputModeIndex+=1
-				case 5:
-					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
-					cmd.Stdout = io.Discard
-    				cmd.Stderr = io.Discard
-					cmd.Start();
-					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh >/dev/null 2>&1`)
+					cmd2 := exec.Command("bash", "-c", `nohup ./command.sh copy >/dev/null 2>&1`)
 					cmd2.Stdout = io.Discard
     				cmd2.Stderr = io.Discard
 					cmd2.Start();
-					inputText=""
-					inputModeIndex=0
 					rl.CloseWindow()
+					return;
+				case 4:
+					cmd := exec.Command("bash", "-c", `nohup ./command.sh getpaste >/dev/null 2>&1`)
+					outputCmd, err := cmd.Output()
+					if err == nil {
+						tempInputText := inputText[:inputModeIndex]+string(outputCmd)
+						inputText = tempInputText+inputText[inputModeIndex:]
+						inputModeIndex += len(string(outputCmd))
+					}
+					rl.CloseWindow()
+				case 5:
+					inputText = "CTRL"
+					inputModeIndex = 4
 				default:
 					inputText += "check"
 					inputModeIndex+=4
 				}
-			}else{
+			} else if isTextPredictMode {
+				addNewText := autoCompleteWord[max(yPos, len(autoCompleteWord))]
+				inputText+=addNewText
+				inputModeIndex += len(addNewText)
+			} else{
+				autoCompleteWord = []string{}
 				indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
 				addNewText := string(listKey[indexShift][(xPagePos)+yPos][xPos])
-				inputText += addNewText
+				tempInputText := inputText[:inputModeIndex]+addNewText
+				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
+				autoComplete := checkAutoComplete("29494", inputText)
+				autoCompleteWord = append(autoCompleteWord, autoComplete...)
 			}
 			
 		}
@@ -301,8 +339,8 @@ func main() {
 		isYMoreSpace := 0
 		isXMoreSpace := 0
 		idxTemp := 0
-		if(isCommandKeySelect){
-			cursorUI = "__________"
+		if(isCommandKeySelect || isTextPredictMode){
+			cursorUI = "________"
 		}else{
 			// yPos = 0
 			cursorUI = "_"
@@ -314,7 +352,7 @@ func main() {
 			}
 			if(idx == 6){
 				isYMoreSpace = 0
-				isXMoreSpace += 110
+				isXMoreSpace += 70
 			}
 			if(idxTemp==6){
 				idxTemp = 0
@@ -326,24 +364,132 @@ func main() {
 		}
 		posYCursorTemp := 0
 		if(isCommandKeySelect){
-			posYCursorTemp = 260
-		}else{
-			posYCursorTemp = (xStartPos*110)+20+(15*xPos)
+			posYCursorTemp = 170
+		} else if (isTextPredictMode) {
+			posYCursorTemp = 280
+		} else{
+			posYCursorTemp = (xStartPos*70)+20+(15*xPos)
 		}
 		if isInputMoveMode == false {
 			rl.DrawText(cursorUI, int32(posYCursorTemp), int32((yStartPos*80)+(45+(20*yPos))), 20, rl.Red)
 		}
 		
 		if isShiftDown {
-			rl.DrawText("--------", 260, 80, 20, rl.Red)
+			rl.DrawText("--------", 170, 80, 20, rl.Red)
 		}
 		
-		rl.DrawText("COPY", 260, 40, 20, rl.DarkGray)
-		rl.DrawText("PASTE", 260, 60, 20, rl.DarkGray)
-		rl.DrawText("SHIFT", 260, 80, 20, rl.DarkGray)
-		rl.DrawText("CTRL", 260, 100, 20, rl.DarkGray)
-		rl.DrawText("SPACE", 260, 120, 20, rl.DarkGray)
-		rl.DrawText("END", 260, 140, 20, rl.DarkGray)
+		rl.DrawText("SPACE", 170, 40, 20, rl.DarkGray)
+		rl.DrawText("END", 170, 60, 20, rl.DarkGray)
+		rl.DrawText("SHIFT", 170, 80, 20, rl.DarkGray)
+		rl.DrawText("COPY", 170, 100, 20, rl.DarkGray)
+		rl.DrawText("PASTE", 170, 120, 20, rl.DarkGray)
+		rl.DrawText("CTRL", 170, 140, 20, rl.DarkGray)
+
+		// loop for 
+		for idx, item := range autoCompleteWord {
+			rl.DrawText(item, 280, int32(40+(20*idx)), 20, rl.DarkGray)
+		}
+		
 		rl.EndDrawing()
 	}
+}
+
+func checkAutoComplete(id string, inputword string) []string {
+	mode := getProcName(id)
+	// fmt.Println(mode=="zsh")
+	// incompleteWord := inputword
+	autoCompleteList := []string{}
+	if(mode == "terminal" || strings.Contains(mode, "zsh")){
+		separatorCmd := []string{";", "&&", "||", "&",  "|"}
+		arrInput := strings.Fields(inputword)
+		lastIndexCmd := lastIndexOf(arrInput, separatorCmd)
+		commandNow := arrInput[min(lastIndexCmd+1, len(arrInput)-1)]
+		// TODO: get history terminal
+		if (commandNow == "go"){
+			autoCompleteList = append(autoCompleteList, []string{
+				"run", "build",
+			}...)
+		}
+		// check what folder is terminal, and list possible file or folder in dir
+		if (string(inputword[len(inputword)-1]) == " ") {
+			autoCompleteList = append(autoCompleteList, getListFolder(filter(getCurrDirProcId(id), '\n'))...)
+		}else{
+			// get word before /
+			lastCmd := string(arrInput[len(arrInput)-1])
+			fmt.Println("get cmd", lastCmd)
+			splitLastCmd := strings.Split(lastCmd, "/")
+			dirCheck := "/"+strings.Join(splitLastCmd[:len(splitLastCmd)-1], "/")
+			autoCompleteTarget := splitLastCmd[len(splitLastCmd)-1]
+			autoCompleteListTempp := getListFolder(filter(dirCheck, '\n'))
+			// append(autoCompleteList, ...)
+			for _, item := range autoCompleteListTempp {
+				checkCharLen := int(math.Min(float64(len(autoCompleteTarget)), float64(len(item))))
+				if string(item[:checkCharLen]) == autoCompleteTarget {
+					autoCompleteList = append(autoCompleteList, string(item[checkCharLen:]))
+				}
+			}
+		}
+		autoCompleteList = append(autoCompleteList, getClipboardList()...)
+		return autoCompleteList
+	}else if(mode == "browser"){
+		return autoCompleteList
+	}
+	return autoCompleteList
+}
+func lastIndexOf(slice []string, target []string) int {
+    for i := len(slice) - 1; i >= 0; i-- {
+        if contains(target, slice[i]) {
+			return i
+		}
+    }
+    return 0
+}
+func contains[T comparable](slice []T, value T) bool {
+    for _, v := range slice {
+        if v == value {
+            return true
+        }
+    }
+    return false
+}
+func getListFolder(curr string) []string {
+	// currDir := getCommandOutput("cd "+curr+" | ls | sed 's#/##'")
+	currDir := getCommandOutput("ls "+curr+" | sed 's#/##'")
+	fmt.Println("---------")
+	fmt.Println("ls "+curr+" | sed 's#/##'")
+	fmt.Println("---------")
+	// fmt.Println(string(currDir))
+	// fmt.Println("---end------")
+	return strings.Split(currDir, "\n")
+}
+func getCommandOutput(cmd string) string {
+	cmdOut := exec.Command("bash", "-c", cmd)
+	// fmt.Println("hehehe :", cmd)
+	outputCmd, err := cmdOut.Output()
+	if err == nil {
+		// fmt.Println("hehehe :", string(outputCmd))
+		return string(outputCmd)
+	}
+	return ""
+}
+func max(a int, b int) int {
+	if a>b { return a } else { return b}
+}
+func getCurrDirProcId(procId string) string {
+	return getCommandOutput(`lsof -p `+procId+` 2>/dev/null | awk '$4 == "cwd" { print $9 }'`)
+}
+func getProcName(procId string) string {
+	return getCommandOutput(`lsof -p `+procId+` 2>/dev/null | awk '$4 == "cwd" { print $1 }'`)
+}
+func filter(str string, filterStr rune) string {
+	output := ""
+	for _, ch := range str {
+		if ch != filterStr {
+			output += string(ch)
+		}
+	}
+	return output
+}
+func getClipboardList() []string {
+	return strings.Split(getCommandOutput("gpaste-client list"), "\n")
 }
