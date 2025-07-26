@@ -155,9 +155,11 @@ func main() {
 					}
 				}
 				yPos+=1;
-				if (yPos > 5 && isTextPredictMode){
-					textPredicIndex+=1
-					yPos = 5
+				if (isTextPredictMode){
+					if (yPos > 5) {
+						textPredicIndex+=1
+						yPos = 5
+					}
 				}else if(yPos>2 && isCommandKeySelect==false){
 					yPos = 0;
 				}else if (yPos>5 && isCommandKeySelect){
