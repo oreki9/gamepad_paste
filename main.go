@@ -332,7 +332,7 @@ func main() {
 					inputModeIndex+=4
 				}
 			} else if isTextPredictMode {
-				addNewText := autoCompleteWord[min(yPos, len(autoCompleteWord)-1)]
+				addNewText := autoCompleteWord[min(textPredicIndex+yPos, len(autoCompleteWord)-1)]
 				inputText+=addNewText
 				inputModeIndex += len(addNewText)
 			} else{
