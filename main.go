@@ -311,10 +311,17 @@ func main() {
 				tempInputText := inputText[:inputModeIndex]+addNewText
 				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
-				getWindowIdSelected := getCommandOutput("xdotool getactivewindow getwindowpid")
-				fmt.Println(getWindowIdSelected)
-				// autoComplete := checkAutoComplete("29494", inputText)
-				// autoCompleteWord = append(autoCompleteWord, autoComplete...)
+				getIdAsync := getCommandOutputAsync("xdotool getactivewindow getwindowpid")
+				go func(){
+					output := <-getIdAsync
+					func(out string) {
+						autoComplete := checkAutoComplete(filter(out, '\n'), inputText)
+						autoCompleteWord = append(autoCompleteWord, autoComplete...)
+					}(output)
+				}()
+
+
+
 			}
 			
 		}
@@ -398,7 +405,7 @@ func main() {
 
 func checkAutoComplete(id string, inputword string) []string {
 	mode := getProcName(id)
-	// fmt.Println(mode=="zsh")
+	fmt.Println(mode)
 	// incompleteWord := inputword
 	autoCompleteList := []string{}
 	if(mode == "terminal" || strings.Contains(mode, "zsh")){
@@ -494,4 +501,19 @@ func filter(str string, filterStr rune) string {
 }
 func getClipboardList() []string {
 	return strings.Split(getCommandOutput("gpaste-client list"), "\n")
+}
+func getCommandOutputAsync(cmd string) <-chan string {
+	result := make(chan string)
+	go func() {
+		defer close(result)
+		cmdOut := exec.Command("bash", "-c", cmd)
+		outputCmd, err := cmdOut.Output()
+		if err == nil {
+			result <- string(outputCmd)
+		} else {
+			result <- "" // or send error message if needed
+		}
+	}()
+
+	return result
 }
