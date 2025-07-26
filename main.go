@@ -158,7 +158,7 @@ func main() {
 				if (isTextPredictMode){
 					maxShow := min(5, len(autoCompleteWord))
 					if (yPos >= maxShow) {
-						if(textPredicIndex+(yPos-1)<len(autoCompleteWord)){
+						if((textPredicIndex+yPos)<(len(autoCompleteWord)-1)){
 							textPredicIndex+=1
 						}
 						yPos -= 1
