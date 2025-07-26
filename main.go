@@ -70,9 +70,9 @@ func main() {
         scanner := bufio.NewScanner(stdout)
         for scanner.Scan() {
             mu.Lock()
-            outputLines = scanner.Text()
-			fmt.Println("output text")
-			fmt.Println(outputLines)
+   //          outputLines = scanner.Text()
+			// fmt.Println("output text")
+			// fmt.Println(outputLines)
 			rl.CloseWindow()
             mu.Unlock()
         }
@@ -311,8 +311,10 @@ func main() {
 				tempInputText := inputText[:inputModeIndex]+addNewText
 				inputText = tempInputText+inputText[inputModeIndex:]
 				inputModeIndex += len(addNewText)
-				autoComplete := checkAutoComplete("29494", inputText)
-				autoCompleteWord = append(autoCompleteWord, autoComplete...)
+				getWindowIdSelected := getCommandOutput("xdotool getactivewindow getwindowpid")
+				fmt.Println(getWindowIdSelected)
+				// autoComplete := checkAutoComplete("29494", inputText)
+				// autoCompleteWord = append(autoCompleteWord, autoComplete...)
 			}
 			
 		}

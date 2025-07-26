@@ -1,5 +1,5 @@
 #!/bin/bash
-cd "Documents/Github/gamepad_paste"
+cd "/home/oreki/Documents/Github/gamepad_paste"
 if [ -e maingamepadkey ]; then
      nohup ./backgamepadkeyproc.sh
 else

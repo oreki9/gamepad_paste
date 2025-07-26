@@ -34130,3 +34130,1824 @@ pc      0x7f554f6100
 fault   0x7f554f6100
 
 evtest: error reading: No such device
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 6 and 12
+you here 0 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): invalid pointer
+SIGABRT: abort
+PC=0x7f7e3c7608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x7303c0 [syscall, locked to thread]:
+runtime.cgocall(0x4d3a60, 0x40000ad918)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x40000ad8e0 sp=0x40000ad8a0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x40000ad910 sp=0x40000ad8e0 pc=0x4a5be0
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x40000ad920 sp=0x40000ad910 pc=0x4a611c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:277 +0x1850 fp=0x40000adf40 sp=0x40000ad920 pc=0x4afe20
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x40000adfd0 sp=0x40000adf40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000adfd0 sp=0x40000adfd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 3 gp=0x4000003180 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045760 sp=0x4000045740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000457b0 sp=0x4000045760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000457d0 sp=0x40000457b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000457d0 sp=0x40000457d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 4 gp=0x4000003340 m=nil [GC scavenge wait]:
+runtime.gopark(0x4000026070?, 0x60d530?, 0x1?, 0x0?, 0x4000003340?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045f60 sp=0x4000045f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72fc20)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000045f90 sp=0x4000045f60 pc=0x42635c
+runtime.bgscavenge(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000045fb0 sp=0x4000045f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000045fd0 sp=0x4000045fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000045fd0 sp=0x4000045fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 18 gp=0x4000082700 m=nil [finalizer wait]:
+runtime.gopark(0x40000445b8?, 0x46a3c8?, 0x8?, 0x0?, 0x5cc780?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 5 gp=0x4000003880 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751f50?, 0x18?, 0x65?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x40000464b0 sp=0x4000046490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x40000464f0 sp=0x40000464b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f36888e40, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000046520 sp=0x40000464f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40000a2120?, 0x4000100000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000046550 sp=0x4000046520 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40000a2120, {0x4000100000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x40000465f0 sp=0x4000046550 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x400009a030, {0x4000100000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000046630 sp=0x40000465f0 pc=0x48a500
+bufio.(*Scanner).Scan(0x4000046748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x4000046710 sp=0x4000046630 pc=0x49cf00
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x40000467d0 sp=0x4000046710 pc=0x4b0248
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000467d0 sp=0x40000467d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 8 gp=0x4000003a40 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x2b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000102b20 sp=0x4000102b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000102b60 sp=0x4000102b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f36888d48, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000102b90 sp=0x4000102b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400006e420?, 0x4000246000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000102bc0 sp=0x4000102b90 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400006e420, {0x4000246000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000102c60 sp=0x4000102bc0 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048050, {0x4000246000?, 0x3?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000102ca0 sp=0x4000102c60 pc=0x48a500
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x4000246000?, 0x4000230d78?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000102cd0 sp=0x4000102ca0 pc=0x48d4dc
+io.discard.ReadFrom({}, {0x60ec18, 0x4000218048})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000102d30 sp=0x4000102cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60ec18?, 0x4000218048?})
+	<autogenerated>:1 +0x38 fp=0x4000102d50 sp=0x4000102d30 pc=0x4746f8
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ec18, 0x4000218048}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000102dd0 sp=0x4000102d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x4000048050?, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000102e20 sp=0x4000102dd0 pc=0x48aa6c
+os.(*File).WriteTo(0x4000048050, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000102e60 sp=0x4000102e20 pc=0x48a980
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ea78, 0x4000048050}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000102ee0 sp=0x4000102e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000102f40 sp=0x4000102ee0 pc=0x4ab434
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000102fb0 sp=0x4000102f40 pc=0x4abec4
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000102fd0 sp=0x4000102fb0 pc=0x4abe50
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000102fd0 sp=0x4000102fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+goroutine 9 gp=0x4000003c00 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x4b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000054b20 sp=0x4000054b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000054b60 sp=0x4000054b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f36888a60, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000054b90 sp=0x4000054b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400006e600?, 0x400013e000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000054bc0 sp=0x4000054b90 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400006e600, {0x400013e000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000054c60 sp=0x4000054bc0 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048070, {0x400013e000?, 0x2?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000054ca0 sp=0x4000054c60 pc=0x48a500
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x400013e000?, 0x4000041578?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000054cd0 sp=0x4000054ca0 pc=0x48d4dc
+io.discard.ReadFrom({}, {0x60ec18, 0x400010e050})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000054d30 sp=0x4000054cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60ec18?, 0x400010e050?})
+	<autogenerated>:1 +0x38 fp=0x4000054d50 sp=0x4000054d30 pc=0x4746f8
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ec18, 0x400010e050}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000054dd0 sp=0x4000054d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x4000048070?, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000054e20 sp=0x4000054dd0 pc=0x48aa6c
+os.(*File).WriteTo(0x4000048070, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000054e60 sp=0x4000054e20 pc=0x48a980
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ea78, 0x4000048070}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000054ee0 sp=0x4000054e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000054f40 sp=0x4000054ee0 pc=0x4ab434
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000054fb0 sp=0x4000054f40 pc=0x4abec4
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000054fd0 sp=0x4000054fb0 pc=0x4abe50
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000054fd0 sp=0x4000054fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x32f4
+r2      0x6
+r3      0x7f7e5fd020
+r4      0x7f7e604b50
+r5      0x1
+r6      0x20
+r7      0x1
+r8      0x83
+r9      0x40000ad918
+r10     0xa
+r11     0x2867a613
+r12     0x18
+r13     0x7fd2041310
+r14     0x0
+r15     0x1b3e67ce9f30
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x32f4
+r20     0x7f7e5fd020
+r21     0x6
+r22     0x7fd2041098
+r23     0x7fd2041098
+r24     0x7fd2041098
+r25     0x18
+r26     0x40000ad828
+r27     0x10
+r28     0x72fd80
+r29     0x7fd2040f20
+lr      0x7f7e3c75f4
+sp      0x7fd2040f10
+pc      0x7f7e3c7608
+fault   0x0
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 0 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): invalid pointer
+SIGABRT: abort
+PC=0x7fa3a47608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x7303c0 [syscall, locked to thread]:
+runtime.cgocall(0x4d3a60, 0x400010f918)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x400010f8e0 sp=0x400010f8a0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x400010f910 sp=0x400010f8e0 pc=0x4a5be0
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x400010f920 sp=0x400010f910 pc=0x4a611c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:277 +0x1850 fp=0x400010ff40 sp=0x400010f920 pc=0x4afe20
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x400010ffd0 sp=0x400010ff40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400010ffd0 sp=0x400010ffd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 18 gp=0x4000082380 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000040760 sp=0x4000040740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x400008e000)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000407b0 sp=0x4000040760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000407d0 sp=0x40000407b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000407d0 sp=0x40000407d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 19 gp=0x4000082540 m=nil [GC scavenge wait]:
+runtime.gopark(0x400008e000?, 0x60d530?, 0x1?, 0x0?, 0x4000082540?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000040f60 sp=0x4000040f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72fc20)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000040f90 sp=0x4000040f60 pc=0x42635c
+runtime.bgscavenge(0x400008e000)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000040fb0 sp=0x4000040f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000040fd0 sp=0x4000040fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000040fd0 sp=0x4000040fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 20 gp=0x4000082a80 m=nil [finalizer wait]:
+runtime.gopark(0x40000445b8?, 0x46a3c8?, 0x8?, 0x0?, 0x5cc780?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 34 gp=0x4000138000 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751f50?, 0x18?, 0xe5?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x400013e4b0 sp=0x400013e490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x400013e4f0 sp=0x400013e4b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f47b0ae50, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x400013e520 sp=0x400013e4f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400012a000?, 0x40000ac000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x400013e550 sp=0x400013e520 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400012a000, {0x40000ac000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x400013e5f0 sp=0x400013e550 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000106008, {0x40000ac000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x400013e630 sp=0x400013e5f0 pc=0x48a500
+bufio.(*Scanner).Scan(0x400013e748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x400013e710 sp=0x400013e630 pc=0x49cf00
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x400013e7d0 sp=0x400013e710 pc=0x4b0248
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400013e7d0 sp=0x400013e7d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 3 gp=0x400019c1c0 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0xab?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x400014ab20 sp=0x400014ab00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x400014ab60 sp=0x400014ab20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f47b0ac60, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x400014ab90 sp=0x400014ab60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x4000188600?, 0x40001ae000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x400014abc0 sp=0x400014ab90 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x4000188600, {0x40001ae000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x400014ac60 sp=0x400014abc0 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000186068, {0x40001ae000?, 0x3?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x400014aca0 sp=0x400014ac60 pc=0x48a500
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x40001ae000?, 0x4000045578?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x400014acd0 sp=0x400014aca0 pc=0x48d4dc
+io.discard.ReadFrom({}, {0x60ec18, 0x4000186070})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x400014ad30 sp=0x400014acd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60ec18?, 0x4000186070?})
+	<autogenerated>:1 +0x38 fp=0x400014ad50 sp=0x400014ad30 pc=0x4746f8
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ec18, 0x4000186070}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x400014add0 sp=0x400014ad50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x4000186068?, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x400014ae20 sp=0x400014add0 pc=0x48aa6c
+os.(*File).WriteTo(0x4000186068, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x400014ae60 sp=0x400014ae20 pc=0x48a980
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ea78, 0x4000186068}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x400014aee0 sp=0x400014ae60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x400014af40 sp=0x400014aee0 pc=0x4ab434
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x400014afb0 sp=0x400014af40 pc=0x4abec4
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x400014afd0 sp=0x400014afb0 pc=0x4abe50
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400014afd0 sp=0x400014afd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+goroutine 4 gp=0x4000003500 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x7b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000057b20 sp=0x4000057b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000057b60 sp=0x4000057b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f47b0ab68, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000057b90 sp=0x4000057b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400007e1e0?, 0x40000de000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000057bc0 sp=0x4000057b90 pc=0x487388
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400007e1e0, {0x40000de000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000057c60 sp=0x4000057bc0 pc=0x487ad0
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048028, {0x40000de000?, 0x1?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000057ca0 sp=0x4000057c60 pc=0x48a500
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x40000de000?, 0x4000045d78?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000057cd0 sp=0x4000057ca0 pc=0x48d4dc
+io.discard.ReadFrom({}, {0x60ec18, 0x40000a2068})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000057d30 sp=0x4000057cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60ec18?, 0x40000a2068?})
+	<autogenerated>:1 +0x38 fp=0x4000057d50 sp=0x4000057d30 pc=0x4746f8
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ec18, 0x40000a2068}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000057dd0 sp=0x4000057d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x4000048028?, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000057e20 sp=0x4000057dd0 pc=0x48aa6c
+os.(*File).WriteTo(0x4000048028, {0x60ebd8, 0x7c6060})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000057e60 sp=0x4000057e20 pc=0x48a980
+io.copyBuffer({0x60ebd8, 0x7c6060}, {0x60ea78, 0x4000048028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000057ee0 sp=0x4000057e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000057f40 sp=0x4000057ee0 pc=0x4ab434
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000057fb0 sp=0x4000057f40 pc=0x4abec4
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000057fd0 sp=0x4000057fb0 pc=0x4abe50
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000057fd0 sp=0x4000057fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x3390
+r2      0x6
+r3      0x7fa3c74020
+r4      0x7fa3c7bb50
+r5      0x1
+r6      0x20
+r7      0x1
+r8      0x83
+r9      0x400010f918
+r10     0xa
+r11     0x3093d7d0
+r12     0x18
+r13     0x7fe3d66350
+r14     0x0
+r15     0x12e964a2f0f0
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x3390
+r20     0x7fa3c74020
+r21     0x6
+r22     0x7fe3d660d8
+r23     0x7fe3d660d8
+r24     0x7fe3d660d8
+r25     0x18
+r26     0x400010f828
+r27     0x10
+r28     0x72fd80
+r29     0x7fe3d65f60
+lr      0x7fa3a475f4
+sp      0x7fe3d65f50
+pc      0x7fa3a47608
+fault   0x0
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): invalid pointer
+SIGABRT: abort
+PC=0x7f903b7608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x730240 [syscall, locked to thread]:
+runtime.cgocall(0x4d1260, 0x400011d938)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x400011d900 sp=0x400011d8c0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x400011d930 sp=0x400011d900 pc=0x4a5140
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x400011d940 sp=0x400011d930 pc=0x4a567c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:277 +0x1778 fp=0x400011df40 sp=0x400011d940 pc=0x4af2a8
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x400011dfd0 sp=0x400011df40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400011dfd0 sp=0x400011dfd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 3 gp=0x4000003180 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045760 sp=0x4000045740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000457b0 sp=0x4000045760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000457d0 sp=0x40000457b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000457d0 sp=0x40000457d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 4 gp=0x4000003340 m=nil [GC scavenge wait]:
+runtime.gopark(0x4000026070?, 0x60d950?, 0x1?, 0x0?, 0x4000003340?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045f60 sp=0x4000045f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72faa0)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000045f90 sp=0x4000045f60 pc=0x42635c
+runtime.bgscavenge(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000045fb0 sp=0x4000045f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000045fd0 sp=0x4000045fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000045fd0 sp=0x4000045fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 5 gp=0x4000003c00 m=nil [finalizer wait]:
+runtime.gopark(0x0?, 0x0?, 0xb8?, 0x45?, 0x46a404?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 6 gp=0x4000003dc0 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751dd0?, 0x18?, 0x65?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x40000464b0 sp=0x4000046490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x40000464f0 sp=0x40000464b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f48026710, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000046520 sp=0x40000464f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400006e180?, 0x400008e000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000046550 sp=0x4000046520 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400006e180, {0x400008e000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x40000465f0 sp=0x4000046550 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048038, {0x400008e000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000046630 sp=0x40000465f0 pc=0x48a4c0
+bufio.(*Scanner).Scan(0x4000046748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x4000046710 sp=0x4000046630 pc=0x49c460
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x40000467d0 sp=0x4000046710 pc=0x4af658
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000467d0 sp=0x40000467d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 18 gp=0x4000182380 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x9b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000059b20 sp=0x4000059b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000059b60 sp=0x4000059b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f48026618, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000059b90 sp=0x4000059b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40001a2060?, 0x4000128000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000059bc0 sp=0x4000059b90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40001a2060, {0x4000128000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000059c60 sp=0x4000059bc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x40001a0008, {0x4000128000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000059ca0 sp=0x4000059c60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x4000128000?, 0x4000040578?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000059cd0 sp=0x4000059ca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x4000048060})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000059d30 sp=0x4000059cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x4000048060?})
+	<autogenerated>:1 +0x38 fp=0x4000059d50 sp=0x4000059d30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x4000048060}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000059dd0 sp=0x4000059d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x40001a0008?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000059e20 sp=0x4000059dd0 pc=0x48aa2c
+os.(*File).WriteTo(0x40001a0008, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000059e60 sp=0x4000059e20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x40001a0008}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000059ee0 sp=0x4000059e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000059f40 sp=0x4000059ee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000059fb0 sp=0x4000059f40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000059fd0 sp=0x4000059fb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000059fd0 sp=0x4000059fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+goroutine 19 gp=0x4000182540 m=nil [IO wait]:
+runtime.gopark(0x1?, 0x400000?, 0x78?, 0xab?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x400005ab20 sp=0x400005ab00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x400005ab60 sp=0x400005ab20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f48026520, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x400005ab90 sp=0x400005ab60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40001a2240?, 0x400012a000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x400005abc0 sp=0x400005ab90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40001a2240, {0x400012a000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x400005ac60 sp=0x400005abc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x40001a0028, {0x400012a000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x400005aca0 sp=0x400005ac60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x400012a000?, 0x4000040d78?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x400005acd0 sp=0x400005aca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x4000048068})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x400005ad30 sp=0x400005acd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x4000048068?})
+	<autogenerated>:1 +0x38 fp=0x400005ad50 sp=0x400005ad30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x4000048068}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x400005add0 sp=0x400005ad50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x40001a0028?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x400005ae20 sp=0x400005add0 pc=0x48aa2c
+os.(*File).WriteTo(0x40001a0028, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x400005ae60 sp=0x400005ae20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x40001a0028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x400005aee0 sp=0x400005ae60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x400005af40 sp=0x400005aee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x400005afb0 sp=0x400005af40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x400005afd0 sp=0x400005afb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400005afd0 sp=0x400005afd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x34e5
+r2      0x6
+r3      0x7f905f0020
+r4      0x7f905f7b50
+r5      0x1
+r6      0x20
+r7      0x4
+r8      0x83
+r9      0x400011d938
+r10     0xa
+r11     0xe989665
+r12     0x18
+r13     0x7fd865daf0
+r14     0x0
+r15     0x126a3c06619b
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x34e5
+r20     0x7f905f0020
+r21     0x6
+r22     0x7fd865d878
+r23     0x7fd865d878
+r24     0x7fd865d878
+r25     0x18
+r26     0x400011d848
+r27     0x10
+r28     0x72fc00
+r29     0x7fd865d700
+lr      0x7f903b75f4
+sp      0x7fd865d6f0
+pc      0x7f903b7608
+fault   0x0
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): invalid pointer
+SIGABRT: abort
+PC=0x7fb5ab7608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x730240 [syscall, locked to thread]:
+runtime.cgocall(0x4d1260, 0x4000195938)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x4000195900 sp=0x40001958c0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x4000195930 sp=0x4000195900 pc=0x4a5140
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x4000195940 sp=0x4000195930 pc=0x4a567c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:286 +0x1850 fp=0x4000195f40 sp=0x4000195940 pc=0x4af380
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x4000195fd0 sp=0x4000195f40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000195fd0 sp=0x4000195fd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 3 gp=0x4000003180 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045760 sp=0x4000045740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000457b0 sp=0x4000045760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000457d0 sp=0x40000457b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000457d0 sp=0x40000457d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 4 gp=0x4000003340 m=nil [GC scavenge wait]:
+runtime.gopark(0x4000026070?, 0x60d950?, 0x1?, 0x0?, 0x4000003340?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045f60 sp=0x4000045f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72faa0)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000045f90 sp=0x4000045f60 pc=0x42635c
+runtime.bgscavenge(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000045fb0 sp=0x4000045f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000045fd0 sp=0x4000045fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000045fd0 sp=0x4000045fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 5 gp=0x4000003c00 m=nil [finalizer wait]:
+runtime.gopark(0x0?, 0x0?, 0xb8?, 0x45?, 0x46a404?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 6 gp=0x4000003dc0 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751dd0?, 0x18?, 0x65?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x40000464b0 sp=0x4000046490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x40000464f0 sp=0x40000464b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f6d716710, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000046520 sp=0x40000464f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400006e180?, 0x400008e000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000046550 sp=0x4000046520 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400006e180, {0x400008e000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x40000465f0 sp=0x4000046550 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048038, {0x400008e000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000046630 sp=0x40000465f0 pc=0x48a4c0
+bufio.(*Scanner).Scan(0x4000046748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x4000046710 sp=0x4000046630 pc=0x49c460
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x40000467d0 sp=0x4000046710 pc=0x4af658
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000467d0 sp=0x40000467d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 7 gp=0x400019e000 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x4b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000054b20 sp=0x4000054b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000054b60 sp=0x4000054b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f6d716618, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000054b90 sp=0x4000054b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400006e360?, 0x400009c000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000054bc0 sp=0x4000054b90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400006e360, {0x400009c000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000054c60 sp=0x4000054bc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x4000048060, {0x400009c000?, 0x1?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000054ca0 sp=0x4000054c60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x400009c000?, 0x4000054d08?, 0x410f58?})
+	<autogenerated>:1 +0x2c fp=0x4000054cd0 sp=0x4000054ca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x4000096000})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000054d30 sp=0x4000054cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x4000096000?})
+	<autogenerated>:1 +0x38 fp=0x4000054d50 sp=0x4000054d30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x4000096000}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000054dd0 sp=0x4000054d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x4000048060?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000054e20 sp=0x4000054dd0 pc=0x48aa2c
+os.(*File).WriteTo(0x4000048060, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000054e60 sp=0x4000054e20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x4000048060}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000054ee0 sp=0x4000054e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000054f40 sp=0x4000054ee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000054fb0 sp=0x4000054f40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000054fd0 sp=0x4000054fb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000054fd0 sp=0x4000054fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x3541
+r2      0x6
+r3      0x7fb5ce5020
+r4      0x7fb5cecb50
+r5      0x1
+r6      0x20
+r7      0x1
+r8      0x83
+r9      0x4000195938
+r10     0xa
+r11     0x941027c
+r12     0x18
+r13     0x7fcbbaff70
+r14     0x0
+r15     0xcf10bd696ec
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x3541
+r20     0x7fb5ce5020
+r21     0x6
+r22     0x7fcbbafcf8
+r23     0x7fcbbafcf8
+r24     0x7fcbbafcf8
+r25     0x18
+r26     0x4000195848
+r27     0x10
+r28     0x72fc00
+r29     0x7fcbbafb80
+lr      0x7fb5ab75f4
+sp      0x7fcbbafb70
+pc      0x7fb5ab7608
+fault   0x0
+
+evtest: error reading: No such device
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 0 and 12
+you here 0 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): invalid size
+SIGABRT: abort
+PC=0x7f7b697608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x730240 [syscall, locked to thread]:
+runtime.cgocall(0x4d1260, 0x400019f938)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x400019f900 sp=0x400019f8c0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x400019f930 sp=0x400019f900 pc=0x4a5140
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x400019f940 sp=0x400019f930 pc=0x4a567c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:277 +0x1778 fp=0x400019ff40 sp=0x400019f940 pc=0x4af2a8
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x400019ffd0 sp=0x400019ff40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400019ffd0 sp=0x400019ffd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 3 gp=0x4000003180 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045760 sp=0x4000045740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000457b0 sp=0x4000045760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000457d0 sp=0x40000457b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000457d0 sp=0x40000457d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 4 gp=0x4000003340 m=nil [GC scavenge wait]:
+runtime.gopark(0x4000026070?, 0x60d950?, 0x1?, 0x0?, 0x4000003340?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045f60 sp=0x4000045f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72faa0)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000045f90 sp=0x4000045f60 pc=0x42635c
+runtime.bgscavenge(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000045fb0 sp=0x4000045f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000045fd0 sp=0x4000045fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000045fd0 sp=0x4000045fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 5 gp=0x4000003c00 m=nil [finalizer wait]:
+runtime.gopark(0x0?, 0x0?, 0xb8?, 0x45?, 0x46a404?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 18 gp=0x40001a8000 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751dd0?, 0x18?, 0x5?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x40000404b0 sp=0x4000040490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x40000404f0 sp=0x40000404b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f1f72ce50, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000040520 sp=0x40000404f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x400018e000?, 0x40000a4000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000040550 sp=0x4000040520 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x400018e000, {0x40000a4000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x40000405f0 sp=0x4000040550 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x400018c000, {0x40000a4000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000040630 sp=0x40000405f0 pc=0x48a4c0
+bufio.(*Scanner).Scan(0x4000040748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x4000040710 sp=0x4000040630 pc=0x49c460
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x40000407d0 sp=0x4000040710 pc=0x4af658
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000407d0 sp=0x40000407d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 34 gp=0x4000082380 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x9b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000059b20 sp=0x4000059b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000059b60 sp=0x4000059b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f1f72cd58, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000059b90 sp=0x4000059b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40000b0060?, 0x40001bc000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000059bc0 sp=0x4000059b90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40000b0060, {0x40001bc000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000059c60 sp=0x4000059bc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x40000ae008, {0x40001bc000?, 0x2?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000059ca0 sp=0x4000059c60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x40001bc000?, 0x40000c6578?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000059cd0 sp=0x4000059ca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x400018c020})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000059d30 sp=0x4000059cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x400018c020?})
+	<autogenerated>:1 +0x38 fp=0x4000059d50 sp=0x4000059d30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x400018c020}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000059dd0 sp=0x4000059d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x40000ae008?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000059e20 sp=0x4000059dd0 pc=0x48aa2c
+os.(*File).WriteTo(0x40000ae008, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000059e60 sp=0x4000059e20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x40000ae008}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000059ee0 sp=0x4000059e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000059f40 sp=0x4000059ee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000059fb0 sp=0x4000059f40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000059fd0 sp=0x4000059fb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000059fd0 sp=0x4000059fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+goroutine 35 gp=0x4000082540 m=nil [IO wait]:
+runtime.gopark(0x1?, 0x400000?, 0x78?, 0x4b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000054b20 sp=0x4000054b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000054b60 sp=0x4000054b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f1f72cc60, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000054b90 sp=0x4000054b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40000b0240?, 0x40001be000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000054bc0 sp=0x4000054b90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40000b0240, {0x40001be000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000054c60 sp=0x4000054bc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x40000ae028, {0x40001be000?, 0x2?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000054ca0 sp=0x4000054c60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x40001be000?, 0x40000c6d78?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000054cd0 sp=0x4000054ca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x400018c028})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000054d30 sp=0x4000054cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x400018c028?})
+	<autogenerated>:1 +0x38 fp=0x4000054d50 sp=0x4000054d30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x400018c028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000054dd0 sp=0x4000054d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x40000ae028?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000054e20 sp=0x4000054dd0 pc=0x48aa2c
+os.(*File).WriteTo(0x40000ae028, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000054e60 sp=0x4000054e20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x40000ae028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000054ee0 sp=0x4000054e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000054f40 sp=0x4000054ee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000054fb0 sp=0x4000054f40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000054fd0 sp=0x4000054fb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000054fd0 sp=0x4000054fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x8a42
+r2      0x6
+r3      0x7f7b8ce020
+r4      0x7f7b8d5b50
+r5      0x1
+r6      0x20
+r7      0x2
+r8      0x83
+r9      0x400019f938
+r10     0xa
+r11     0x278b5129
+r12     0x18
+r13     0x7fd218fdc0
+r14     0x0
+r15     0x9720c796c6f
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x8a42
+r20     0x7f7b8ce020
+r21     0x6
+r22     0x7fd218fb48
+r23     0x7fd218fb48
+r24     0x7fd218fb48
+r25     0x15
+r26     0x400019f848
+r27     0x10
+r28     0x72fc00
+r29     0x7fd218f9d0
+lr      0x7f7b6975f4
+sp      0x7fd218f9c0
+pc      0x7f7b697608
+fault   0x0
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 0 and 12
+you here 6 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+you here 0 and 12
+you here 0 and 12
+you here 0 and 12
+you here 6 and 12
+you here 0 and 12
+you here 6 and 12
+you here 6 and 12
+you here 0 and 12
+you here 0 and 12
+you here 6 and 12
+you here 6 and 12
+you here 0 and 12
+you here 6 and 12
+you here 6 and 12
+you here 6 and 12
+you here 6 and 12
+INFO: TEXTURE: [ID 2] Unloaded texture data from VRAM (GPU)
+INFO: SHADER: [ID 3] Default shader unloaded successfully
+INFO: TEXTURE: [ID 1] Default texture unloaded successfully
+INFO: Window closed successfully
+free(): double free detected in tcache 2
+SIGABRT: abort
+PC=0x7f9c597608 m=0 sigcode=18446744073709551610
+signal arrived during cgo execution
+
+goroutine 1 gp=0x40000021c0 m=0 mp=0x730240 [syscall, locked to thread]:
+runtime.cgocall(0x4d1260, 0x40000b7938)
+	/usr/lib/go-1.22/src/runtime/cgocall.go:157 +0x44 fp=0x40000b7900 sp=0x40000b78c0 pc=0x407de4
+github.com/gen2brain/raylib-go/raylib._Cfunc_CloseWindow()
+	_cgo_gotypes.go:835 +0x30 fp=0x40000b7930 sp=0x40000b7900 pc=0x4a5140
+github.com/gen2brain/raylib-go/raylib.CloseWindow()
+	/home/oreki/go/pkg/mod/github.com/gen2brain/raylib-go/raylib@v0.55.1/rcore.go:143 +0x1c fp=0x40000b7940 sp=0x40000b7930 pc=0x4a567c
+main.main()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:277 +0x1778 fp=0x40000b7f40 sp=0x40000b7940 pc=0x4af2a8
+runtime.main()
+	/usr/lib/go-1.22/src/runtime/proc.go:271 +0x28c fp=0x40000b7fd0 sp=0x40000b7f40 pc=0x43c63c
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000b7fd0 sp=0x40000b7fd0 pc=0x46e124
+
+goroutine 2 gp=0x4000002c40 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044f90 sp=0x4000044f70 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.forcegchelper()
+	/usr/lib/go-1.22/src/runtime/proc.go:326 +0xb8 fp=0x4000044fd0 sp=0x4000044f90 pc=0x43c8f8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000044fd0 sp=0x4000044fd0 pc=0x46e124
+created by runtime.init.6 in goroutine 1
+	/usr/lib/go-1.22/src/runtime/proc.go:314 +0x24
+
+goroutine 3 gp=0x4000003180 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045760 sp=0x4000045740 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.bgsweep(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcsweep.go:278 +0xa0 fp=0x40000457b0 sp=0x4000045760 pc=0x428960
+runtime.gcenable.gowrap1()
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x28 fp=0x40000457d0 sp=0x40000457b0 pc=0x41cde8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000457d0 sp=0x40000457d0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:203 +0x6c
+
+goroutine 4 gp=0x4000003340 m=nil [GC scavenge wait]:
+runtime.gopark(0x4000026070?, 0x60d950?, 0x1?, 0x0?, 0x4000003340?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000045f60 sp=0x4000045f40 pc=0x43ca68
+runtime.goparkunlock(...)
+	/usr/lib/go-1.22/src/runtime/proc.go:408
+runtime.(*scavengerState).park(0x72faa0)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:425 +0x5c fp=0x4000045f90 sp=0x4000045f60 pc=0x42635c
+runtime.bgscavenge(0x4000026070)
+	/usr/lib/go-1.22/src/runtime/mgcscavenge.go:653 +0x44 fp=0x4000045fb0 sp=0x4000045f90 pc=0x4268a4
+runtime.gcenable.gowrap2()
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0x28 fp=0x4000045fd0 sp=0x4000045fb0 pc=0x41cd88
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000045fd0 sp=0x4000045fd0 pc=0x46e124
+created by runtime.gcenable in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mgc.go:204 +0xac
+
+goroutine 5 gp=0x4000003c00 m=nil [finalizer wait]:
+runtime.gopark(0x0?, 0x0?, 0xb8?, 0x45?, 0x46a404?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000044580 sp=0x4000044560 pc=0x43ca68
+runtime.runfinq()
+	/usr/lib/go-1.22/src/runtime/mfinal.go:194 +0x108 fp=0x40000447d0 sp=0x4000044580 pc=0x41beb8
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000447d0 sp=0x40000447d0 pc=0x46e124
+created by runtime.createfing in goroutine 1
+	/usr/lib/go-1.22/src/runtime/mfinal.go:164 +0x80
+
+goroutine 18 gp=0x4000082380 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x751dd0?, 0x18?, 0x5?, 0x4105cc?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x40000404b0 sp=0x4000040490 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x40000404f0 sp=0x40000404b0 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f54244e50, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000040520 sp=0x40000404f0 pc=0x469850
+internal/poll.(*pollDesc).wait(0x40000a8000?, 0x4000180000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000040550 sp=0x4000040520 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x40000a8000, {0x4000180000, 0x1000, 0x1000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x40000405f0 sp=0x4000040550 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x40000a6000, {0x4000180000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000040630 sp=0x40000405f0 pc=0x48a4c0
+bufio.(*Scanner).Scan(0x4000040748)
+	/usr/lib/go-1.22/src/bufio/scan.go:219 +0x7d0 fp=0x4000040710 sp=0x4000040630 pc=0x49c460
+main.main.func1()
+	/home/oreki/Documents/Github/gamepad_paste/main.go:71 +0x88 fp=0x40000407d0 sp=0x4000040710 pc=0x4af658
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x40000407d0 sp=0x40000407d0 pc=0x46e124
+created by main.main in goroutine 1
+	/home/oreki/Documents/Github/gamepad_paste/main.go:69 +0x378
+
+goroutine 34 gp=0x40001a2000 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0xab?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x400005ab20 sp=0x400005ab00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x400005ab60 sp=0x400005ab20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f54244d58, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x400005ab90 sp=0x400005ab60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x4000190060?, 0x400011e000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x400005abc0 sp=0x400005ab90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x4000190060, {0x400011e000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x400005ac60 sp=0x400005abc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x400018e008, {0x400011e000?, 0x0?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x400005aca0 sp=0x400005ac60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x400011e000?, 0x40001a8578?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x400005acd0 sp=0x400005aca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x4000048038})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x400005ad30 sp=0x400005acd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x4000048038?})
+	<autogenerated>:1 +0x38 fp=0x400005ad50 sp=0x400005ad30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x4000048038}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x400005add0 sp=0x400005ad50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x400018e008?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x400005ae20 sp=0x400005add0 pc=0x48aa2c
+os.(*File).WriteTo(0x400018e008, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x400005ae60 sp=0x400005ae20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x400018e008}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x400005aee0 sp=0x400005ae60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x400005af40 sp=0x400005aee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x400005afb0 sp=0x400005af40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x400005afd0 sp=0x400005afb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x400005afd0 sp=0x400005afd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+goroutine 35 gp=0x40001a21c0 m=nil [IO wait]:
+runtime.gopark(0x18?, 0x400000?, 0x78?, 0x9b?, 0x41cfe0?)
+	/usr/lib/go-1.22/src/runtime/proc.go:402 +0xc8 fp=0x4000059b20 sp=0x4000059b00 pc=0x43ca68
+runtime.netpollblock(0x0?, 0xffffffff?, 0xff?)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:573 +0x158 fp=0x4000059b60 sp=0x4000059b20 pc=0x4363a8
+internal/poll.runtime_pollWait(0x7f54244c60, 0x72)
+	/usr/lib/go-1.22/src/runtime/netpoll.go:345 +0xa0 fp=0x4000059b90 sp=0x4000059b60 pc=0x469850
+internal/poll.(*pollDesc).wait(0x4000190240?, 0x40000c8000?, 0x1)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:84 +0x28 fp=0x4000059bc0 sp=0x4000059b90 pc=0x487348
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/lib/go-1.22/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0x4000190240, {0x40000c8000, 0x2000, 0x2000})
+	/usr/lib/go-1.22/src/internal/poll/fd_unix.go:164 +0x200 fp=0x4000059c60 sp=0x4000059bc0 pc=0x487a90
+os.(*File).read(...)
+	/usr/lib/go-1.22/src/os/file_posix.go:29
+os.(*File).Read(0x400018e028, {0x40000c8000?, 0x1?, 0x0?})
+	/usr/lib/go-1.22/src/os/file.go:118 +0x70 fp=0x4000059ca0 sp=0x4000059c60 pc=0x48a4c0
+os.(*fileWithoutWriteTo).Read(0x721260?, {0x40000c8000?, 0x40001a8d78?, 0x4111ac?})
+	<autogenerated>:1 +0x2c fp=0x4000059cd0 sp=0x4000059ca0 pc=0x48d49c
+io.discard.ReadFrom({}, {0x60f018, 0x40000a6028})
+	/usr/lib/go-1.22/src/io/io.go:666 +0x74 fp=0x4000059d30 sp=0x4000059cd0 pc=0x474564
+io.(*discard).ReadFrom(0x720d80?, {0x60f018?, 0x40000a6028?})
+	<autogenerated>:1 +0x38 fp=0x4000059d50 sp=0x4000059d30 pc=0x4746f8
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60f018, 0x40000a6028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:415 +0x14c fp=0x4000059dd0 sp=0x4000059d50 pc=0x47427c
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os.genericWriteTo(0x400018e028?, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:269 +0x5c fp=0x4000059e20 sp=0x4000059dd0 pc=0x48aa2c
+os.(*File).WriteTo(0x400018e028, {0x60efd8, 0x7c5ee0})
+	/usr/lib/go-1.22/src/os/file.go:247 +0xa0 fp=0x4000059e60 sp=0x4000059e20 pc=0x48a940
+io.copyBuffer({0x60efd8, 0x7c5ee0}, {0x60ee78, 0x400018e028}, {0x0, 0x0, 0x0})
+	/usr/lib/go-1.22/src/io/io.go:411 +0x98 fp=0x4000059ee0 sp=0x4000059e60 pc=0x4741c8
+io.Copy(...)
+	/usr/lib/go-1.22/src/io/io.go:388
+os/exec.(*Cmd).writerDescriptor.func1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:577 +0x44 fp=0x4000059f40 sp=0x4000059ee0 pc=0x4aa994
+os/exec.(*Cmd).Start.func2(0x0?)
+	/usr/lib/go-1.22/src/os/exec/exec.go:724 +0x34 fp=0x4000059fb0 sp=0x4000059f40 pc=0x4ab424
+os/exec.(*Cmd).Start.gowrap1()
+	/usr/lib/go-1.22/src/os/exec/exec.go:736 +0x30 fp=0x4000059fd0 sp=0x4000059fb0 pc=0x4ab3b0
+runtime.goexit({})
+	/usr/lib/go-1.22/src/runtime/asm_arm64.s:1222 +0x4 fp=0x4000059fd0 sp=0x4000059fd0 pc=0x46e124
+created by os/exec.(*Cmd).Start in goroutine 1
+	/usr/lib/go-1.22/src/os/exec/exec.go:723 +0x7cc
+
+r0      0x0
+r1      0x8cdb
+r2      0x6
+r3      0x7f9c7cc020
+r4      0x7f9c7d3b50
+r5      0x1
+r6      0x20
+r7      0xa55
+r8      0x83
+r9      0x40000b7938
+r10     0xa
+r11     0x379a9a0d
+r12     0x18
+r13     0x7febed5ac0
+r14     0x0
+r15     0x19101d75b5a0
+r16     0x0
+r17     0x0
+r18     0x4
+r19     0x8cdb
+r20     0x7f9c7cc020
+r21     0x6
+r22     0x7febed5848
+r23     0x7febed5848
+r24     0x7febed5848
+r25     0x29
+r26     0x40000b7848
+r27     0x10
+r28     0x72fc00
+r29     0x7febed56d0
+lr      0x7f9c5975f4
+sp      0x7febed56c0
+pc      0x7f9c597608
+fault   0x0
+KEY 315 PRESSED!
+INFO: Initializing raylib 5.5
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1280 x 720
+INFO:     > Screen size:  400 x 225
+INFO:     > Render size:  400 x 225
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 373
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   NVIDIA Corporation
+INFO:     > Renderer: NVIDIA Tegra X1 (nvgpu)/integrated
+INFO:     > Version:  3.3.0 NVIDIA 32.3.1
+INFO:     > GLSL:     3.30 NVIDIA via Cg compiler
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW - X11): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: SYSTEM: Working Directory: /home/oreki/Documents/Github/gamepad_paste
+INFO: TIMER: Target time per frame: 16.667 milliseconds
