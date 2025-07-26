@@ -220,7 +220,6 @@ func main() {
 			}else{
 				if isCommandKeySelect == false {
 					if yStartPos == 0 {
-						fmt.Println("you here", xPagePos, "and", len(listKey[0]))
 						if((xPagePos+3)+1<len(listKey[0])){
 							xPagePos+=3
 							yStartPos+=1
@@ -237,9 +236,11 @@ func main() {
 						}
 					}
 				}else{
-					isTextPredictMode = true
-					yPos = 0
-					isCommandKeySelect = false
+					if (len(autoCompleteWord) > 0) {
+						isTextPredictMode = true
+						yPos = 0
+						isCommandKeySelect = false
+					}
 				}
 			}
 		}
@@ -268,6 +269,14 @@ func main() {
 				case 0:
 					tempInputText := inputText[:inputModeIndex]+string(" ")
 					inputText = tempInputText+inputText[inputModeIndex:]
+					autoComplete := checkAutoComplete(modeWindow, windowId, inputText)
+					go func(){
+						output := <-autoComplete
+						func(out []string) {
+							autoCompleteWord = []string{}
+							autoCompleteWord = append(autoCompleteWord, out...)
+						}(output)
+					}()
 					inputModeIndex+=1
 				case 1:
 					cmd := exec.Command("bash", "-c", `echo "`+inputText+`" | xclip -selection clipboard`)
@@ -306,11 +315,10 @@ func main() {
 					inputModeIndex+=4
 				}
 			} else if isTextPredictMode {
-				addNewText := autoCompleteWord[max(yPos, len(autoCompleteWord))]
+				addNewText := autoCompleteWord[min(yPos, len(autoCompleteWord)-1)]
 				inputText+=addNewText
 				inputModeIndex += len(addNewText)
 			} else{
-				autoCompleteWord = []string{}
 				indexShift := map[bool]int{true: 1, false: 0}[isShiftDown]
 				addNewText := string(listKey[indexShift][(xPagePos)+yPos][xPos])
 				tempInputText := inputText[:inputModeIndex]+addNewText
@@ -321,6 +329,7 @@ func main() {
 					output := <-autoComplete
 					func(out []string) {
 						fmt.Println(out)
+						autoCompleteWord = []string{}
 						autoCompleteWord = append(autoCompleteWord, out...)
 					}(output)
 				}()
@@ -431,7 +440,11 @@ func checkAutoComplete(mode string, id string, inputword string) <-chan[]string 
 				lastCmd := string(arrInput[len(arrInput)-1])
 				fmt.Println("get cmd", lastCmd)
 				splitLastCmd := strings.Split(lastCmd, "/")
-				dirCheck := "/"+strings.Join(splitLastCmd[:len(splitLastCmd)-1], "/")
+				dirCheck := ""
+				if(len(splitLastCmd)>1){
+					dirCheck+="/"
+				}
+				dirCheck+=strings.Join(splitLastCmd[:len(splitLastCmd)-1], "/")
 				autoCompleteTarget := splitLastCmd[len(splitLastCmd)-1]
 				autoCompleteListTempp := getListFolder(filter(dirCheck, '\n'))
 				// append(autoCompleteList, ...)
