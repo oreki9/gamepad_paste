@@ -130,11 +130,11 @@ func main() {
 		}
 		if rl.IsKeyPressed(rl.KeyUp) {
 			if isInputMoveMode == false {
-				if isTextPredictMode {
-					if((yPos-1) < 0){
-						return;
-					}
-				}
+				// if isTextPredictMode {
+				// 	if((yPos-1) < 0){
+				// 		return;
+				// 	}
+				// }
 				yPos-=1;
 				if (yPos < 0 && isTextPredictMode){
 					textPredicIndex-=1
@@ -149,11 +149,11 @@ func main() {
 		}
 		if rl.IsKeyPressed(rl.KeyDown) {
 			if isInputMoveMode == false {
-				if isTextPredictMode {
-					if((yPos+1) >= len(autoCompleteWord)){
-						return;
-					}
-				}
+				// if isTextPredictMode {
+				// 	if((yPos+1) >= len(autoCompleteWord)){
+				// 		return;
+				// 	}
+				// }
 				yPos+=1;
 				if (isTextPredictMode){
 					if (yPos > 5) {
